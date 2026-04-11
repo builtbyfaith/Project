@@ -1,83 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maliyah Ross | About</title>
-  <meta name="description" content="Bright whimsical portfolio website template with placeholders for projects, brand, and contact information." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
 <header class="site-header">
+  <!-- ✿ outer header flowers — left side (3 flowers, mirrors right) -->
+  <div style="position:absolute;left:0;top:0;bottom:0;width:200px;display:flex;align-items:center;gap:6px;padding-left:0;pointer-events:none;z-index:1;overflow:hidden;">
+    <!-- teal large, partly clipped left -->
+    <svg style="width:62px;height:62px;opacity:.34;flex-shrink:0;margin-left:-18px;" viewBox="0 0 100 100">
+      <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
+    </svg>
+    <!-- blush medium -->
+    <svg style="width:42px;height:42px;opacity:.30;flex-shrink:0;" viewBox="0 0 100 100">
+      <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/><circle cx="50" cy="50" r="5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
+    </svg>
+    <!-- sage small -->
+    <svg style="width:28px;height:28px;opacity:.24;flex-shrink:0;" viewBox="0 0 100 100">
+      <g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#c5c8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
+    </svg>
+  </div>
+
+  <!-- ✿ outer header flowers — right side -->
+  <div style="position:absolute;right:0;top:0;bottom:0;width:180px;display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-right:12px;pointer-events:none;z-index:1;overflow:hidden;">
+    <!-- dusty tiny -->
+    <svg style="width:26px;height:26px;opacity:.22;flex-shrink:0;" viewBox="0 0 100 100">
+      <g fill="#afc7d8"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#afc7d8" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
+    </svg>
+    <!-- mustard medium -->
+    <svg style="width:40px;height:40px;opacity:.3;flex-shrink:0;" viewBox="0 0 100 100">
+      <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/><circle cx="50" cy="50" r="5" fill="#d6b73f" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
+    </svg>
+    <!-- coral large, partly clipped right -->
+    <svg style="width:60px;height:60px;opacity:.32;flex-shrink:0;margin-right:-16px;" viewBox="0 0 100 100">
+      <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
+    </svg>
+  </div>
+
   <div class="container nav-wrap">
-    <a class="brand" href="index.html">
-      <span class="brand-mark"></span>
-      <span>Maliyah Ross</span>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="work.html">Projects</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-primary" href="work.html">View Portfolio</a>
+   <div class="logo-slot"><img height="200" width="200" src="Logosvari-03.png" /></div>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
   </div>
 </header>
 
 <main>
-  <section class="page-hero">
-    <div class="container split">
-      <div>
-        <span class="eyebrow">About page</span>
-        <h1 class="serif" style="font-size:clamp(2.8rem,5vw,4.7rem); margin:.5rem 0 1rem;">Creative, thoughtful, and built for what comes next.</h1>
-        <p>
-          Maliyah Ross is an Advertising & Graphic Design student at Grand Canyon University, specializing in brand identity, OOH campaigns, and print design. She enjoys building work that feels visually bold, well organized, and conceptually clear across both digital and physical formats. Her design style blends strong typography, thoughtful color choices, and polished presentation to create work that feels memorable and professional.
-        </p>
-        <a class="btn btn-primary" href="MR-Resume.pdf">Download Resume</a>
-      </div>
-      <div class="about-art">
-        <div class="portrait"></div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container grid-3">
-      <div class="soft-panel">
-        <h3 class="serif" style="margin-top:0;">What I do</h3>
-        <p>Brand identity, OOH campaigns, print design, editorial layout, campaign visuals, and portfolio-ready presentation.</p>
+
+
+<!-- ABOUT SPLIT -->
+<section class="section" style="overflow:hidden;">
+  <!-- more hibiscus scattered -->
+  <svg class="hib hib-4" style="top:40px;right:0%;width:90px;opacity:.09;" viewBox="0 0 100 100">
+    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+  </svg>
+  <svg class="hib hib-6" style="bottom:80px;left:0%;width:75px;opacity:.09;" viewBox="0 0 100 100">
+    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+  </svg>
+  <svg class="hib hib-3" style="top:55%;right:1%;width:55px;opacity:.09;" viewBox="0 0 100 100">
+    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+  </svg>
+
+  <div class="container">
+    <div class="about-split">
+      <!-- Visual panel -->
+      <div class="about-visual">
+        <div class="about-bg"></div>
+        <!-- hibiscus inside visual -->
+        <svg class="hib hib-2" style="top:1rem;right:1.5rem;width:72px;opacity:.28;" viewBox="0 0 100 100">
+          <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+        </svg>
+        <svg class="hib hib-5" style="bottom:3.5rem;left:1.5rem;width:52px;opacity:.22;" viewBox="0 0 100 100">
+          <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+        </svg>
+        <svg class="hib hib-4" style="top:40%;left:1rem;width:38px;opacity:.2;" viewBox="0 0 100 100">
+          <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+        </svg>
+        <div class="about-img-ph">
+          <svg width="56" height="56" viewBox="0 0 100 100">
+            <g fill="#67b8b1" opacity=".35"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61" opacity=".5"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+          </svg>
+          <span>Add Photo Here</span>
+        </div>
       </div>
-      <div class="soft-panel">
-        <h3 class="serif" style="margin-top:0;">Tools</h3>
-        <p>Adobe InDesign, Illustrator, Photoshop, Canva, and other design tools used to build strong layouts, campaign visuals, and polished portfolio pieces.</p>
-      </div>
-      <div class="soft-panel">
-        <h3 class="serif" style="margin-top:0;">Currently building</h3>
-        <p>A stronger professional portfolio, polished case studies, improved mockups, and portfolio work that can carry into internships, freelance work, and future design opportunities.</p>
+
+      <!-- Text -->
+      <div class="about-text">
+        <span class="eyebrow">Background</span>
+        <h2 class="serif" style="font-size:clamp(1.9rem,3.5vw,2.8rem);margin:.5rem 0 1rem;">Hi, I'm <span style="color:var(--coral);font-style:italic;">Maliyah!</span></h2>
+        <p>I'm an Advertising &amp; Graphic Design student at Grand Canyon University, graduating Spring 2026. My work blends strong typography, thoughtful color, and polished presentation to create visuals that feel both memorable and professional.</p>
+        <p>I enjoy developing concepts that connect with real audiences — from brand identity systems to large-scale OOH campaigns. Since 2023 I've been working as a Photographer &amp; Graphic Designer at M4 Elements, supporting creative projects with Adobe tools.</p>
+        <div class="skill-pills">
+          <span class="pill">Adobe InDesign</span>
+          <span class="pill">Illustrator</span>
+          <span class="pill">Photoshop</span>
+          <span class="pill">Canva</span>
+          <span class="pill">Microsoft Office</span>
+        </div>
+        <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="MR-Resume.pdf">Download Resume ✦</a>
+          <a class="btn btn-secondary" href="contact.html">Work Together</a>
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- Info cards -->
+    <div class="info-row">
+      <div class="info-card">
+        <div class="info-icon">🎨</div>
+        <h3 class="serif">What I do</h3>
+        <p>Brand identity, OOH campaigns, print design, editorial layout, campaign visuals, and portfolio-ready presentation across print and digital formats.</p>
+        <svg style="position:absolute;bottom:1rem;right:1rem;opacity:.12;width:42px;" viewBox="0 0 100 100">
+          <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+        </svg>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🛠️</div>
+        <h3 class="serif">My tools</h3>
+        <p>Adobe InDesign, Illustrator, Photoshop, Canva, and the full Microsoft Office Suite — used to build layouts, campaign visuals, and polished portfolio pieces.</p>
+        <svg style="position:absolute;bottom:1rem;right:1rem;opacity:.12;width:42px;" viewBox="0 0 100 100">
+          <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+        </svg>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🌺</div>
+        <h3 class="serif">Currently building</h3>
+        <p>A stronger professional portfolio, polished case studies, improved mockups, and work ready for internships, freelance opportunities, and future design roles.</p>
+        <svg style="position:absolute;bottom:1rem;right:1rem;opacity:.12;width:42px;" viewBox="0 0 100 100">
+          <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="padding:2rem 0 4rem;overflow:hidden;">
+  <svg class="hib hib-3" style="top:-20px;right:3%;width:100px;opacity:.1;" viewBox="0 0 100 100">
+    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+  </svg>
+  <svg class="hib hib-5" style="bottom:-10px;left:2%;width:80px;opacity:.09;" viewBox="0 0 100 100">
+    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+  </svg>
+  <div class="container">
+    <div class="cta-block">
+      <div>
+        <span class="eyebrow">Work together</span>
+        <h2 class="serif" style="margin:.5rem 0 .5rem;">Let's make something <span style="color:var(--coral);font-style:italic;">amazing.</span></h2>
+        <p>Have a project in mind? I'd love to hear about it.</p>
+      </div>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="contact.html">Contact Me ✿</a>
+        <a class="btn btn-secondary" href="work.html">See My Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer class="footer">
+<footer class="footer" style="position:relative;overflow:hidden;">
+  <svg style="position:absolute;bottom:-8px;right:22%;width:46px;opacity:.12;pointer-events:none;" viewBox="0 0 100 100">
+    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+  </svg>
+  <svg style="position:absolute;top:-5px;left:10%;width:34px;opacity:.1;pointer-events:none;" viewBox="0 0 100 100">
+    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+  </svg>
   <div class="container footer-grid">
-    <div>
-      <strong>Maliyah Ross</strong>
-    </div>
+    <span class="footer-brand">&nbsp;</span>
     <div class="footer-links">
-      <a href="mailto:builtbyfaith247@gmail.com">builtbyfaith247@gmail.com</a>
-      <a href="https://www.instagram.com/builtbyfaith4?igsh=MTMwNG9xMnU4ZTVkMw==">Instagram</a>
+      <a href="mailto:builtbyfaith247@gmail.com">Email</a>
+      <a href="https://www.instagram.com/builtbyfaith4" target="_blank">Instagram</a>
+   
     </div>
+    <span class="footer-copy">© 2026</span>
   </div>
 </footer>
 
+
+
+<script>
+/* Watercolor wash shifts hue as you scroll */
+(function(){
+  var hdr = document.querySelector('.site-header');
+  if(!hdr) return;
+  var maxScroll = 600; // px of scroll to complete one full shift
+  function update(){
+    var pct = Math.min(window.scrollY / maxScroll, 1) * 100;
+    /* shift background-position from 0%/40% toward 100%/60% */
+    hdr.style.backgroundPosition = pct + '% ' + (40 + pct * .2) + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
 </body>
 </html>
