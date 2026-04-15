@@ -426,20 +426,32 @@ nav a:hover::after { right: 0; }
     radial-gradient(circle at 25% 30%, rgba(103,184,177,.3) 0%, transparent 45%),
     radial-gradient(circle at 75% 70%, rgba(255,111,97,.2) 0%, transparent 45%);
 }
-/* big image placeholder inside about panel */
+/* about image box — fills the panel, image covers it */
 .about-img-ph {
   position: absolute; inset: 1.5rem;
   border-radius: 20px;
+  overflow: hidden;
   background: rgba(255,255,255,.55);
   border: 1.5px solid rgba(255,255,255,.8);
   display: flex; align-items: center; justify-content: center;
   flex-direction: column; gap: .5rem;
 }
+/* when an actual image is inside, make it fill the box */
+.about-img-ph img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 20px;
+}
+/* hide the placeholder svg/span once an image is present */
+.about-img-ph:has(img) svg,
+.about-img-ph:has(img) span { display: none; }
 .about-img-ph span {
   font-size: .7rem; font-weight: 600; letter-spacing: .1em;
   text-transform: uppercase; color: rgba(37,50,74,.38);
 }
-.about-img-ph svg { opacity: .25; }
+.about-img-ph > svg { opacity: .25; }
 
 .about-text h2 { margin-bottom: 1.1rem; }
 .about-text p   { font-size: .95rem; color: rgba(37,50,74,.68); margin-bottom: .9rem; }
