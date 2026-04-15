@@ -13,7 +13,7 @@
 
 <header class="site-header">
   <!-- ✿ outer header flowers — left side (3 flowers, mirrors right) -->
-  <div style="position:absolute;left:0;top:0;bottom:0;width:200px;display:flex;align-items:center;gap:6px;padding-left:0;pointer-events:none;z-index:1;overflow:hidden;">
+  <div class="header-edge-flowers" style="position:absolute;left:0;top:0;bottom:0;width:200px;display:flex;align-items:center;gap:6px;padding-left:0;pointer-events:none;z-index:1;overflow:hidden;">
     <!-- teal large, partly clipped left -->
     <svg style="width:62px;height:62px;opacity:.34;flex-shrink:0;margin-left:-18px;" viewBox="0 0 100 100">
       <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
@@ -29,7 +29,7 @@
   </div>
 
   <!-- ✿ outer header flowers — right side -->
-  <div style="position:absolute;right:0;top:0;bottom:0;width:180px;display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-right:12px;pointer-events:none;z-index:1;overflow:hidden;">
+  <div class="header-edge-flowers" style="position:absolute;right:0;top:0;bottom:0;width:180px;display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-right:12px;pointer-events:none;z-index:1;overflow:hidden;">
     <!-- dusty tiny -->
     <svg style="width:26px;height:26px;opacity:.22;flex-shrink:0;" viewBox="0 0 100 100">
       <g fill="#afc7d8"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#afc7d8" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
@@ -52,7 +52,9 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul></nav>
-   
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -64,27 +66,21 @@
   <div class="blob" style="width:300px;height:280px;background:rgba(255,111,97,.07);bottom:-90px;left:-90px;"></div>
   <div class="blob" style="width:200px;height:180px;background:rgba(214,183,63,.08);top:30%;left:42%;"></div>
 
-  <!-- hibiscus cluster — top right, large coral -->
   <svg class="hib" style="top:-15px;right:2%;width:140px;opacity:.2;" viewBox="0 0 100 100">
     <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
-  <!-- teal small, right of hero text -->
   <svg class="hib hib-3" style="top:22%;right:47%;width:60px;opacity:.13;" viewBox="0 0 100 100">
     <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
-  <!-- blush mid left -->
   <svg class="hib hib-2" style="top:50%;left:0%;width:75px;opacity:.14;" viewBox="0 0 100 100">
     <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
-  <!-- mustard bottom right -->
   <svg class="hib hib-4" style="bottom:5px;right:6%;width:95px;opacity:.15;" viewBox="0 0 100 100">
     <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
-  <!-- coral tiny bottom left -->
   <svg class="hib hib-5" style="bottom:8%;left:5%;width:55px;opacity:.14;" viewBox="0 0 100 100">
     <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
-  <!-- sage tiny near headline -->
   <svg class="hib hib-6" style="top:8%;left:10%;width:42px;opacity:.11;" viewBox="0 0 100 100">
     <g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
@@ -104,7 +100,7 @@
         <div class="hero-card-back"></div>
         <div class="hero-card">
           <div class="spin-badge"><div class="spin-badge-inner">Spring<br>2026<br>✿</div></div>
-          <div class="hero-img-ph"><img src="home2.png" /></div>
+          <div class="hero-img-ph"><span class="ph-label">Add Photo Here</span></div>
           <div class="hero-card-foot">
             <h3>Maliyah Ross</h3>
             <p>GCU · Advertising &amp; Graphic Design · Class of 2026</p>
@@ -124,21 +120,51 @@
 
 <!-- DETAILS SECTION -->
 <section class="section" style="background:white;overflow:hidden;">
-  <!-- hibiscus decorations -->
   <svg class="hib hib-2" style="top:-45px;right:-25px;width:170px;opacity:.08;" viewBox="0 0 100 100">
     <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
   <svg class="hib hib-5" style="bottom:-25px;left:0%;width:110px;opacity:.09;" viewBox="0 0 100 100">
     <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
-  <svg class="hib hib-4" style="top:45%;right:0%;width:68px;opacity:.09;" viewBox="0 0 100 100">
-    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-3" style="top:20%;left:35%;width:44px;opacity:.1;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="eyebrow">Portfolio Details</span>
+      <h2 class="serif" style="font-size:clamp(2rem,3.5vw,2.8rem);margin:.5rem 0 .75rem;">Professional portfolio &amp; custom domain.</h2>
+    </div>
+    <div class="detail-row">
+      <div class="detail-panel">
+        <h3 class="serif" style="font-style:italic;">Site Setup</h3>
+        <div class="detail-item"><strong>Domain</strong><span>built-by-faith.com</span></div>
+        <div class="detail-item"><strong>Email</strong><span>builtbyfaith247@gmail.com</span></div>
+        <div class="detail-item"><strong>Host</strong><span>Netlify</span></div>
+        <div class="detail-item"><strong>Type</strong><span>Custom-coded portfolio</span></div>
+        <div style="margin-top:1.5rem;"><a class="btn btn-teal" href="contact.html">Get In Touch ✿</a></div>
+      </div>
+      <div>
+        <span class="eyebrow">Readiness</span>
+        <h3 class="serif" style="font-size:1.6rem;font-style:italic;margin:.5rem 0 1.25rem;">Portfolio checklist</h3>
+        <ul class="checklist">
+          <li>Project pages include clear descriptions and visuals</li>
+          <li>Typography and colors remain consistent across pages</li>
+          <li>Resume PDF linked on the About page</li>
+          <li>Contact form sends messages successfully</li>
+          <li>Custom domain connected and secure (HTTPS)</li>
+          <li>Images are high quality and properly sized</li>
+          <li>Navigation works across desktop and mobile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-
+<!-- CTA -->
+<section class="section" style="padding:3rem 0;overflow:hidden;">
+  <svg class="hib hib-4" style="top:-30px;right:-10px;width:125px;opacity:.1;" viewBox="0 0 100 100">
+    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+  </svg>
+  <svg class="hib hib-6" style="bottom:-15px;left:3%;width:85px;opacity:.1;" viewBox="0 0 100 100">
+    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
+  </svg>
   <div class="container">
     <div class="cta-block">
       <div>
@@ -152,20 +178,21 @@
 </section>
 
 </main>
+</main>
 
 <footer class="footer" style="position:relative;overflow:hidden;">
-  <svg style="position:absolute;bottom:-8px;right:20%;width:50px;opacity:.13;pointer-events:none;" viewBox="0 0 100 100">
+  <svg style="position:absolute;bottom:-8px;right:22%;width:46px;opacity:.12;pointer-events:none;" viewBox="0 0 100 100">
     <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
-  <svg style="position:absolute;top:-5px;left:10%;width:36px;opacity:.1;pointer-events:none;" viewBox="0 0 100 100">
+  <svg style="position:absolute;top:-5px;left:8%;width:34px;opacity:.1;pointer-events:none;" viewBox="0 0 100 100">
     <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
   </svg>
   <div class="container footer-grid">
     <span class="footer-brand">&nbsp;</span>
     <div class="footer-links">
-      <a href="/cdn-cgi/l/email-protection#2547504c4951475c43444c514d171112654248444c490b464a48">Email</a>
+      <a href="mailto:builtbyfaith247@gmail.com">Email</a>
       <a href="https://www.instagram.com/builtbyfaith4" target="_blank">Instagram</a>
-   
+     
     </div>
     <span class="footer-copy">© 2026</span>
   </div>
@@ -173,11 +200,74 @@
 
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* Watercolor wash shifts hue as you scroll */
+<!-- ✿ Mobile nav overlay -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <!-- corner hibiscus flowers -->
+  <svg class="mob-hib" style="top:-20px;left:-20px;width:140px;opacity:.18;" viewBox="0 0 100 100">
+    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="top:5px;left:100px;width:80px;opacity:.14;" viewBox="0 0 100 100">
+    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="top:-20px;right:-20px;width:130px;opacity:.18;" viewBox="0 0 100 100">
+    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="top:80px;right:60px;width:65px;opacity:.13;" viewBox="0 0 100 100">
+    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="bottom:-20px;left:-20px;width:150px;opacity:.17;" viewBox="0 0 100 100">
+    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="bottom:60px;left:80px;width:70px;opacity:.13;" viewBox="0 0 100 100">
+    <g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="bottom:-20px;right:-20px;width:140px;opacity:.17;" viewBox="0 0 100 100">
+    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="bottom:70px;right:50px;width:60px;opacity:.12;" viewBox="0 0 100 100">
+    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+<script>
+/* ── Mobile nav toggle ── */
+(function(){
+  var btn    = document.getElementById('navToggle');
+  var overlay = document.getElementById('mobileNav');
+  if(!btn || !overlay) return;
+
+  btn.addEventListener('click', function(){
+    var open = overlay.classList.toggle('nav-open');
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      overlay.classList.remove('nav-open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+
+/* ── Watercolor wash shifts on scroll ── */
 (function(){
   var hdr = document.querySelector('.site-header');
   if(!hdr) return;
-  var maxScroll = 600; // px of scroll to complete one full shift
   function update(){
-    var pct = Math.mi
+    var pct = Math.min((window.scrollY||window.pageYOffset) / 600, 1) * 100;
+    hdr.style.backgroundPosition = pct + '% ' + (40 + pct * .2) + '%';
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();
+</script>
+</body>
+</html>

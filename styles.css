@@ -584,6 +584,93 @@ nav a:hover::after { right: 0; }
   pointer-events: none; z-index: 0;
 }
 
+/* ─── Hamburger button (hidden on desktop) ────── */
+.nav-toggle {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 40px; height: 40px;
+  background: rgba(255,255,255,.5); border: none; cursor: pointer;
+  border-radius: 10px; flex-shrink: 0; z-index: 1001;
+  backdrop-filter: blur(8px);
+}
+.nav-toggle span {
+  display: block; height: 2.5px; width: 22px;
+  background: var(--navy); border-radius: 2px;
+  transition: all .28s ease;
+  transform-origin: center;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* ─── Mobile nav overlay ──────────────────────── */
+/* Hidden by default on mobile — revealed by .nav-open class */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0; z-index: 1000;
+  background: rgba(250,247,242,.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  flex-direction: column;
+  align-items: center; justify-content: center;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .3s ease, transform .3s ease;
+  pointer-events: none;
+  overflow: hidden;
+}
+.mobile-nav-overlay.nav-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Flower decorations inside the mobile overlay */
+.mobile-nav-overlay .mob-hib {
+  position: absolute; pointer-events: none;
+}
+
+/* Stacked nav links inside overlay */
+.mobile-nav-overlay ul {
+  list-style: none;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0;
+  position: relative; z-index: 2;
+}
+.mobile-nav-overlay ul li {
+  display: flex; flex-direction: column; align-items: center;
+}
+/* flower between links */
+.mobile-nav-overlay ul li + li::before {
+  content: '';
+  display: block;
+  width: 20px; height: 20px;
+  margin: .15rem 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: .55;
+}
+.mobile-nav-overlay ul li:nth-child(2)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23ff6f61'%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(0 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(72 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(144 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(216 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(288 50 50)'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23d6b73f'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23ff6f61' opacity='.6'/%3E%3Cline x1='50' y1='50' x2='50' y2='32' stroke='%23d6b73f' stroke-width='2' stroke-linecap='round' opacity='.8'/%3E%3Ccircle cx='50' cy='30' r='2.5' fill='%23d6b73f' opacity='.85'/%3E%3C/g%3E%3C/svg%3E");
+}
+.mobile-nav-overlay ul li:nth-child(3)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%2367b8b1'%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(0 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(72 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(144 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(216 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(288 50 50)'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%23ff6f61'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%2367b8b1' opacity='.6'/%3E%3Cline x1='50' y1='50' x2='50' y2='32' stroke='%23d6b73f' stroke-width='2' stroke-linecap='round' opacity='.8'/%3E%3Ccircle cx='50' cy='30' r='2.5' fill='%23d6b73f' opacity='.85'/%3E%3C/g%3E%3C/svg%3E");
+}
+.mobile-nav-overlay ul li:nth-child(4)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='%23d6b73f'%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(0 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(72 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(144 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(216 50 50)'/%3E%3Cellipse cx='50' cy='20' rx='12' ry='24' transform='rotate(288 50 50)'/%3E%3Ccircle cx='50' cy='50' r='10' fill='%2367b8b1'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23d6b73f' opacity='.6'/%3E%3Cline x1='50' y1='50' x2='50' y2='32' stroke='%23d6b73f' stroke-width='2' stroke-linecap='round' opacity='.8'/%3E%3Ccircle cx='50' cy='30' r='2.5' fill='%23d6b73f' opacity='.85'/%3E%3C/g%3E%3C/svg%3E");
+}
+.mobile-nav-overlay a {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2.2rem; font-style: italic;
+  color: var(--navy); text-decoration: none;
+  padding: .5rem 2rem;
+  display: block; text-align: center;
+  transition: color .2s;
+}
+.mobile-nav-overlay a:hover { color: var(--coral); }
+
 /* ─── Responsive ──────────────────────────────── */
 @media (max-width: 1020px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
@@ -592,12 +679,25 @@ nav a:hover::after { right: 0; }
 @media (max-width: 980px) {
   .hero-grid, .about-split, .contact-layout, .detail-row { grid-template-columns: 1fr; }
   .info-row { grid-template-columns: 1fr 1fr; }
-  nav ul { gap: 1rem; font-size: .9rem; }
+}
+@media (max-width: 760px) {
+  /* Show hamburger, keep header compact */
+  .nav-toggle { display: flex; }
+  .logo-slot { margin-left: 16px; height: 62px; }
+  .nav-wrap { min-height: 72px; }
+  /* Header edge flowers scale down but stay visible */
+  .header-edge-flowers { opacity: .6; }
+  .header-edge-flowers svg { transform: scale(.7); transform-origin: center; }
+  /* Hide the desktop nav — mobile overlay takes over */
+  .nav-wrap nav { display: none; }
+  /* Show the overlay element */
+  .mobile-nav-overlay { display: flex; }
 }
 @media (max-width: 680px) {
   .projects-grid { grid-template-columns: 1fr; }
   .info-row { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .nav-wrap { flex-wrap: wrap; padding: .75rem 0; }
   .cta-block { padding: 2rem; text-align: center; flex-direction: column; align-items: center; }
+  /* fully hide edge flowers on very small screens */
+  .header-edge-flowers { display: none; }
 }

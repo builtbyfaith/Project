@@ -13,7 +13,7 @@
 
 <header class="site-header">
   <!-- ✿ outer header flowers — left side (3 flowers, mirrors right) -->
-  <div style="position:absolute;left:0;top:0;bottom:0;width:200px;display:flex;align-items:center;gap:6px;padding-left:0;pointer-events:none;z-index:1;overflow:hidden;">
+  <div class="header-edge-flowers" style="position:absolute;left:0;top:0;bottom:0;width:200px;display:flex;align-items:center;gap:6px;padding-left:0;pointer-events:none;z-index:1;overflow:hidden;">
     <!-- teal large, partly clipped left -->
     <svg style="width:62px;height:62px;opacity:.34;flex-shrink:0;margin-left:-18px;" viewBox="0 0 100 100">
       <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
@@ -29,7 +29,7 @@
   </div>
 
   <!-- ✿ outer header flowers — right side -->
-  <div style="position:absolute;right:0;top:0;bottom:0;width:180px;display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-right:12px;pointer-events:none;z-index:1;overflow:hidden;">
+  <div class="header-edge-flowers" style="position:absolute;right:0;top:0;bottom:0;width:180px;display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-right:12px;pointer-events:none;z-index:1;overflow:hidden;">
     <!-- dusty tiny -->
     <svg style="width:26px;height:26px;opacity:.22;flex-shrink:0;" viewBox="0 0 100 100">
       <g fill="#afc7d8"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#afc7d8" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
@@ -52,6 +52,9 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul></nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -278,15 +281,69 @@
 
 
 
+<!-- ✿ Mobile nav overlay -->
+<div class="mobile-nav-overlay" id="mobileNav">
+  <!-- corner hibiscus flowers -->
+  <svg class="mob-hib" style="top:-20px;left:-20px;width:140px;opacity:.18;" viewBox="0 0 100 100">
+    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="top:5px;left:100px;width:80px;opacity:.14;" viewBox="0 0 100 100">
+    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="top:-20px;right:-20px;width:130px;opacity:.18;" viewBox="0 0 100 100">
+    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="top:80px;right:60px;width:65px;opacity:.13;" viewBox="0 0 100 100">
+    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="bottom:-20px;left:-20px;width:150px;opacity:.17;" viewBox="0 0 100 100">
+    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="bottom:60px;left:80px;width:70px;opacity:.13;" viewBox="0 0 100 100">
+    <g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="bottom:-20px;right:-20px;width:140px;opacity:.17;" viewBox="0 0 100 100">
+    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+  <svg class="mob-hib" style="bottom:70px;right:50px;width:60px;opacity:.12;" viewBox="0 0 100 100">
+    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
+  </svg>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
 <script>
-/* Watercolor wash shifts hue as you scroll */
+/* ── Mobile nav toggle ── */
+(function(){
+  var btn    = document.getElementById('navToggle');
+  var overlay = document.getElementById('mobileNav');
+  if(!btn || !overlay) return;
+
+  btn.addEventListener('click', function(){
+    var open = overlay.classList.toggle('nav-open');
+    btn.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      overlay.classList.remove('nav-open');
+      btn.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+
+/* ── Watercolor wash shifts on scroll ── */
 (function(){
   var hdr = document.querySelector('.site-header');
   if(!hdr) return;
-  var maxScroll = 600; // px of scroll to complete one full shift
   function update(){
-    var pct = Math.min(window.scrollY / maxScroll, 1) * 100;
-    /* shift background-position from 0%/40% toward 100%/60% */
+    var pct = Math.min((window.scrollY||window.pageYOffset) / 600, 1) * 100;
     hdr.style.backgroundPosition = pct + '% ' + (40 + pct * .2) + '%';
   }
   window.addEventListener('scroll', update, {passive:true});
