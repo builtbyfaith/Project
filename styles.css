@@ -319,15 +319,15 @@ nav a:hover::after { right: 0; }
 }
 .section-head p { font-size: .97rem; color: rgba(37,50,74,.65); max-width: 560px; }
 
-/* ─── Project cards grid (8 cards) ───────────── */
+/* ─── Project cards grid (6 equal cards) ─────── */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
-/* featured — spans 2 cols */
+/* all cards equal — no featured span */
 .project-card-featured {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 .project-card {
@@ -347,17 +347,29 @@ nav a:hover::after { right: 0; }
   position: relative; overflow: hidden;
   background: linear-gradient(135deg, var(--blush), var(--dusty));
   display: flex; align-items: center; justify-content: center;
+  height: 220px;
 }
-.card-img.ci-a { background: linear-gradient(135deg, #f9d8dc, var(--blush)); height: 220px; }
-.card-img.ci-b { background: linear-gradient(135deg, var(--dusty), #c8dce8); height: 220px; }
-.card-img.ci-c { background: linear-gradient(135deg, var(--sage), #d8ddc0); height: 220px; }
-.card-img.ci-d { background: linear-gradient(135deg, #fde9c0, #f7d98e); height: 220px; }
-.card-img.ci-e { background: linear-gradient(135deg, var(--teal), #8ecec8); height: 220px; }
-.card-img.ci-f { background: linear-gradient(135deg, var(--coral), #ffb27c); height: 220px; }
-.card-img.ci-g { background: linear-gradient(135deg, var(--blush), var(--sage)); height: 220px; }
-.card-img.ci-h { background: linear-gradient(135deg, #d4c9e8, var(--dusty)); height: 220px; }
-/* featured card gets taller image */
-.project-card-featured .card-img { height: 280px; }
+.card-img.ci-a { background: linear-gradient(135deg, #f9d8dc, var(--blush)); }
+.card-img.ci-b { background: linear-gradient(135deg, var(--dusty), #c8dce8); }
+.card-img.ci-c { background: linear-gradient(135deg, var(--sage), #d8ddc0); }
+.card-img.ci-d { background: linear-gradient(135deg, #fde9c0, #f7d98e); }
+.card-img.ci-e { background: linear-gradient(135deg, var(--teal), #8ecec8); }
+.card-img.ci-f { background: linear-gradient(135deg, var(--coral), #ffb27c); }
+.card-img.ci-g { background: linear-gradient(135deg, var(--blush), var(--sage)); }
+.card-img.ci-h { background: linear-gradient(135deg, #d4c9e8, var(--dusty)); }
+.project-card-featured .card-img { height: 220px; }
+
+/* ── Image auto-fits inside any card box ── */
+.card-img img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* hide placeholder label once a real image is loaded */
+.card-img:has(img) .img-ph-label,
+.card-img:has(img) .card-hib { display: none; }
 
 .img-ph-label {
   font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
@@ -712,4 +724,21 @@ nav a:hover::after { right: 0; }
   .cta-block { padding: 2rem; text-align: center; flex-direction: column; align-items: center; }
   /* fully hide edge flowers on very small screens */
   .header-edge-flowers { display: none; }
+}
+
+/* ─── Contact method card hover ──────────────── */
+.contact-method-card div {
+  box-shadow: 0 4px 16px rgba(37,50,74,.07);
+}
+.contact-method-card:hover div {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(37,50,74,.13);
+}
+
+/* ─── Contact page combined layout ───────────── */
+@media (max-width: 760px) {
+  .page-hero [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
 }
