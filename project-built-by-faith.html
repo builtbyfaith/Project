@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maliyah Ross | Built by Faith — Brand Identity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+<style>
+/* ─────────────────────────────────────────
+   GALLERY GRID
+───────────────────────────────────────── */
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+.gallery.col-1 { grid-template-columns: 1fr; }
+.gallery.col-2 { grid-template-columns: 1fr 1fr; }
+.gallery.col-4 { grid-template-columns: repeat(4, 1fr); }
+
+.gallery-thumb {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #e8e4df;
+  cursor: pointer;
+}
+/* aspect ratios per content type */
+.gallery-thumb              { aspect-ratio: 4/3; }
+.gallery-thumb.portrait     { aspect-ratio: 3/4; }
+.gallery-thumb.square       { aspect-ratio: 1/1; }
+.gallery-thumb.email        { aspect-ratio: 3/5; }
+.gallery-thumb.wide         { aspect-ratio: 16/7; }
+
+.gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform .28s ease, opacity .2s;
+}
+.gallery-thumb:hover img {
+  transform: scale(1.04);
+  opacity: .88;
+}
+.gallery-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  transition: background .2s;
+  pointer-events: none;
+  border-radius: 10px;
+}
+.gallery-thumb:hover::after { background: rgba(0,0,0,.07); }
+
+.thumb-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0,0,0,.48);
+  padding: 3px 8px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity .18s;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.gallery-thumb:hover .thumb-badge { opacity: 1; }
+
+@media(max-width:700px){
+  .gallery.col-4 { grid-template-columns: 1fr 1fr; }
+  .gallery.col-2 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─────────────────────────────────────────
+   CAROUSEL LIGHTBOX
+───────────────────────────────────────── */
+#lb {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(8,8,12,.93);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#lb.open { display: flex; }
+
+#lb-close {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.13);
+  border: 1.5px solid rgba(255,255,255,.24);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s;
+  z-index: 10001;
+}
+#lb-close:hover { background: rgba(255,255,255,.28); }
+#lb-close svg { width: 16px; height: 16px; }
+
+#lb-counter {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  z-index: 10001;
+  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+}
+
+#lb-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 64px 88px 16px;
+  box-sizing: border-box;
+  flex: 1;
+}
+#lb-img {
+  max-width: min(860px, 86vw);
+  max-height: 74vh;
+  border-radius: 10px;
+  object-fit: contain;
+  display: block;
+  box-shadow: 0 24px 70px rgba(0,0,0,.65);
+  user-select: none;
+  transition: opacity .15s;
+}
+#lb-img.fading { opacity: 0; }
+
+.lb-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  border: 1.5px solid rgba(255,255,255,.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .15s, opacity .15s;
+  z-index: 10001;
+}
+.lb-arrow:hover { background: rgba(255,255,255,.26); }
+.lb-arrow svg { width: 18px; height: 18px; }
+#lb-prev { left: 16px; }
+#lb-next { right: 16px; }
+.lb-arrow[disabled] { opacity: .2; pointer-events: none; }
+
+#lb-caption {
+  font-size: .78rem;
+  color: rgba(255,255,255,.42);
+  text-align: center;
+  margin-top: 8px;
+  padding: 0 24px;
+  min-height: 1.2em;
+  letter-spacing: .02em;
+  font-family: 'Poppins', sans-serif;
+}
+
+#lb-dots {
+  display: flex;
+  gap: 7px;
+  margin-top: 14px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 320px;
+}
+.lb-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.25);
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+}
+.lb-dot.active {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+@media(max-width:600px){
+  #lb-stage { padding: 58px 52px 12px; }
+  .lb-arrow { width: 36px; height: 36px; }
+  #lb-prev { left: 8px; }
+  #lb-next { right: 8px; }
+}
+</style>
+
+<style>
+.sec-img {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f0eeec;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+.sec-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity .2s;
+}
+.sec-img:hover img { opacity: .88; }
+.sec-img .sec-img-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 16px;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0,0,0,.48);
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity .2s;
+  pointer-events: none;
+}
+.sec-img:hover .sec-img-hint { opacity: 1; }
+.sec-img-hint svg { width: 13px; height: 13px; flex-shrink: 0; }
+.side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+.panel-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.panel-label {
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--teal, #67b8b1);
+  margin-bottom: .1rem;
+}
+.panel-desc {
+  font-size: .88rem;
+  line-height: 1.65;
+  color: rgba(37,50,74,.68);
+  margin: 0;
+}
+@media(max-width:700px){
+  .side-by-side { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Carousel Lightbox ── -->
+<div id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button id="lb-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+  </button>
+  <div id="lb-counter"></div>
+  <button class="lb-arrow" id="lb-prev" aria-label="Previous image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="15,18 9,12 15,6"/></svg>
+  </button>
+  <div id="lb-stage">
+    <img id="lb-img" src="" alt="" />
+  </div>
+  <button class="lb-arrow" id="lb-next" aria-label="Next image">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="9,6 15,12 9,18"/></svg>
+  </button>
+  <div id="lb-caption"></div>
+  <div id="lb-dots"></div>
+</div>
+
+
+
+
+
+
+<header class="site-header">
+  <div class="header-edge-flowers" style="position:absolute;left:0;top:0;bottom:0;width:200px;display:flex;align-items:center;gap:6px;padding-left:0;pointer-events:none;z-index:1;overflow:hidden;">
+    <svg style="width:62px;height:62px;opacity:.34;flex-shrink:0;margin-left:-18px;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g></svg>
+    <svg style="width:42px;height:42px;opacity:.30;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/><circle cx="50" cy="50" r="5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g></svg>
+    <svg style="width:28px;height:28px;opacity:.24;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#c5c8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g></svg>
+  </div>
+  <div class="header-edge-flowers" style="position:absolute;right:0;top:0;bottom:0;width:180px;display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-right:12px;pointer-events:none;z-index:1;overflow:hidden;">
+    <svg style="width:26px;height:26px;opacity:.22;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#afc7d8"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#afc7d8" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g></svg>
+    <svg style="width:40px;height:40px;opacity:.3;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/><circle cx="50" cy="50" r="5" fill="#d6b73f" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g></svg>
+    <svg style="width:60px;height:60px;opacity:.32;flex-shrink:0;margin-right:-16px;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g></svg>
+  </div>
+  <div class="container nav-wrap">
+    <div class="logo-slot"><img height="200" width="200" src="Logosvari-03.png" /></div>
+    <nav><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<section class="section" style="padding-top:2.5rem;padding-bottom:0;">
+  <div class="container">
+    <a class="proj-back" href="work.html">← Back to Projects</a>
+    <div class="proj-overview">
+      <div>
+        <span class="eyebrow">Brand Identity</span>
+        <h1 class="serif proj-title">Built by Faith</h1>
+        <div class="proj-tr">
+          <div class="proj-tr-block">
+            <span class="lbl">The Challenge</span>
+            <p>Create a typographic brand piece that communicates a personal identity in a clear and visually compelling way — without relying on imagery. The brand needed to express discipline, confidence, and resilience through type alone.</p>
+          </div>
+          <div class="proj-tr-block">
+            <span class="lbl">The Solution</span>
+            <p>A bold typographic composition built on the phrase "Built by Faith" — using repetition for rhythm, strong hierarchy to anchor the focal point, and a minimalist pink palette that lets the typography carry all the visual impact.</p>
+          </div>
+        </div>
+      </div>
+      <div class="proj-meta">
+        <div class="proj-meta-item"><span class="lbl">Category</span><span class="val">Brand Identity</span></div>
+        <div class="proj-meta-item"><span class="lbl">Deliverables</span><div><span class="tag">Logo System</span><span class="tag t-coral">Business Cards</span><span class="tag t-mustard">Print</span><span class="tag">Apparel</span></div></div>
+        <div class="proj-meta-item"><span class="lbl">Tagline</span><span class="val">Commitment and Confidence</span></div>
+        <div class="proj-meta-item"><span class="lbl">Tools</span><span class="val">Adobe Illustrator · InDesign · Photoshop</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 01: Brand System ── -->
+<!-- ── SECTION 01: Brand System — side-by-side: palette+type | logo system ── -->
+<section class="proj-section">
+  <div class="container">
+    <span class="proj-section-label">01 — Brand System</span>
+    <h2 class="serif">Color Palette, Typography &amp; Logo</h2>
+    <p style="margin-bottom:1.75rem;">The visual foundation of Built by Faith — a five-color pink palette anchored in near-black, a four-font type system, and six logo variations built to work across every surface. Click either image to open it full size.</p>
+    <div class="side-by-side">
+      <!-- Left: Color Palette + Typography -->
+      <div class="panel-block">
+        <p class="panel-label">Color Palette &amp; Typography</p>
+        <div class="sec-img"
+             data-gallery
+             data-images='[{"src":"images/faith/faith1.png","alt":"Color Palette — PMS 1915 C (hot pink #f27c9c), PMS 432 C (near-black #333740), White, PMS 699 C (blush #f9bfc6), PMS 1775 C (peach #f7aaa5) · Typography — Inter (body), Arial Rounded MT Bold (headline), Arial Black (logo), Allura Regular (script accent)"}]'>
+          <img src="images/faith/faith1.png" alt="Color Palette &amp; Typography" />
+          <span class="sec-img-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            View full size
+          </span>
+        </div>
+        <p class="panel-desc">Five PMS colors — hot pink, near-black, white, blush, and peach — create a palette that reads feminine and bold in equal measure. The type system pairs Inter for body copy, Arial Rounded MT Bold for headlines, Arial Black for the primary logo mark, and Allura Regular as a flowing script accent.</p>
+      </div>
+      <!-- Right: Logo System -->
+      <div class="panel-block">
+        <p class="panel-label">Logo System — 6 Variations</p>
+        <div class="sec-img"
+             data-gallery
+             data-images='[{"src":"images/faith/faith2.png","alt":"Logo System — 6 variations: Classic black wordmark with black script, Classic wordmark with pink script, Dark-field reversed wordmark, Bold all-caps pink stacked lockup, Bold all-caps black stacked lockup, Dark-field all-caps stacked lockup with tagline · commitment and confidence tagline"}]'>
+          <img src="images/faith/faith2.png" alt="Logo System — 6 Variations" />
+          <span class="sec-img-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            View full size
+          </span>
+        </div>
+        <p class="panel-desc">Six logo variations cover the full range of use cases — two classic wordmarks pairing Arial Black with the Allura script (one in black, one in pink), a reversed white-on-dark version, and three bold all-caps stacked lockups in pink, black, and dark-field, each paired with the tagline "commitment and confidence."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 02: Typographic Poster ── -->
+<!-- ── SECTION 02: Typographic Poster ── -->
+<section class="proj-section">
+  <div class="container">
+    <span class="proj-section-label">02 — Typographic Poster</span>
+    <h2 class="serif">In-Context Brand Display</h2>
+    <p style="margin-bottom:1.5rem;">The brand poster shown at gym scale on a concrete column — demonstrating real-world environmental presence. The bold all-caps stacked "BUILT BY FAITH" lockup dominates the center of a dark-field poster, flanked top and bottom by repeating pink marquee text. The tagline "commitment and confidence" runs in a light spaced treatment below the primary headline, reinforcing the brand voice at large format. Click to open full size.</p>
+    <div class="sec-img"
+         data-gallery
+         data-images='[{"src":"images/faith/faith5.png","alt":"Typographic Poster — Gym Scale Environmental Mockup: bold all-caps BUILT BY FAITH on dark field, pink repeating marquee top and bottom, commitment and confidence tagline"}]'>
+      <img src="images/faith/faith5.png" alt="Typographic Poster — Gym Scale Mockup" />
+      <span class="sec-img-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        View full size
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 03: Business Cards & Print Assets — side-by-side ── -->
+<section class="proj-section">
+  <div class="container">
+    <span class="proj-section-label">03 — Business Cards &amp; Print Assets</span>
+    <h2 class="serif">Collateral System</h2>
+    <p style="margin-bottom:1.75rem;">A complete print collateral suite — twelve business card variations and five stationery pieces — all built on the same brand mark and minimal layout language. Click either image to open it full size.</p>
+    <div class="side-by-side">
+      <div class="panel-block">
+        <p class="panel-label">Business Cards — 12 Variations</p>
+        <div class="sec-img"
+             data-gallery
+             data-images='[{"src":"images/faith/faith3.png","alt":"Business Cards — 12 variations across 6 front-and-back concepts: Classic wordmark with black script, Stacked wordmark with pink script, Diagonal pink accent block, Pink color-block with ghost script, Bold all-caps black lockup, Bold all-caps pink lockup. Back sides carry contact info with commitment and confidence tagline in pink Allura script."}]'>
+          <img src="images/faith/faith3.png" alt="Business Cards — 12 Variations" />
+          <span class="sec-img-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            View full size
+          </span>
+        </div>
+        <p class="panel-desc">Twelve designs across six front-and-back concepts — exploring weight, color blocking, and typographic hierarchy in landscape format. Backs consistently carry hello@builtbyfaith.co, builtbyfaith.co, and the tagline "commitment and confidence" in the pink Allura script.</p>
+      </div>
+      <div class="panel-block">
+        <p class="panel-label">Print Assets — Stationery System</p>
+        <div class="sec-img"
+             data-gallery
+             data-images='[{"src":"images/faith/faith6.png","alt":"Print Assets — Stationery System: Letterhead (clean top-anchored), Letterhead with pink footer bar and faith script, Full-page branded paper with pink left sidebar and ghost faith watermark, Thank-you card front with large Allura script, Thank-you card back with brand message, commitment and confident tagline, and builtbyfaith.co."}]'>
+          <img src="images/faith/faith6.png" alt="Print Assets — Stationery System" />
+          <span class="sec-img-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            View full size
+          </span>
+        </div>
+        <p class="panel-desc">Five stationery pieces on a consistent white ground with restrained pink accents — two letterhead formats, a full-page branded paper with a pink left sidebar and ghost "faith" watermark, and a thank-you card set with a large Allura script front and the brand message on the reverse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 04: Apparel — single clickable image ── -->
+<section class="proj-section">
+  <div class="container">
+    <span class="proj-section-label">04 — Apparel</span>
+    <h2 class="serif">Brand Applied to Product</h2>
+    <p style="margin-bottom:1.5rem;">The brand system applied across a full activewear and accessories line — demonstrating real-world versatility on product. A pink sports bra and leggings set carries the white wordmark on the back. A sand hoodie features the bold all-caps pink stacked lockup with "commitment and confidence" below. White and black trucker and dad cap variations show the brand at front and three-quarter angle. White joggers carry the minimal two-line "BUILT BY / faith" script treatment at the hip. Every piece confirms the brand holds across fabric, color, and scale. Click to open full size.</p>
+    <div class="sec-img"
+         data-gallery
+         data-images='[{"src":"images/faith/faith4.png","alt":"Apparel Mockups — Pink sports bra and leggings with white wordmark on back, Sand hoodie with bold all-caps pink lockup and commitment and confidence tagline, White and black trucker cap and dad cap variations at front and three-quarter angle, White joggers with BUILT BY faith script at hip."}]'>
+      <img src="images/faith/faith4.png" alt="Apparel — Full Product Line Mockups" />
+      <span class="sec-img-hint">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        View full size
+      </span>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div class="proj-nav">
+    <a href="project-dicks.html">← Dick's Sporting Goods</a>
+    <a href="project-game-day.html">Next: Game Day →</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer" style="position:relative;overflow:hidden;">
+  <svg style="position:absolute;bottom:-8px;right:22%;width:46px;opacity:.12;pointer-events:none;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/></g></svg>
+  <div class="container footer-grid">
+    <span class="footer-brand">&nbsp;</span>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/builtbyfaith4" target="_blank">Instagram</a>
+      <a href="https://www.behance.net/maliyahross" target="_blank">Behance</a>
+      <a href="https://www.linkedin.com/in/maliyah-ross-400322330/" target="_blank">LinkedIn</a>
+      <a href="mailto:builtbyfaith247@gmail.com">Email</a>
+    </div>
+    <span class="footer-copy">© 2026</span>
+  </div>
+</footer>
+
+<div class="mobile-nav-overlay" id="mobileNav">
+  <svg class="mob-hib" style="top:-20px;left:-20px;width:140px;opacity:.18;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g></svg>
+  <svg class="mob-hib" style="top:-20px;right:-20px;width:130px;opacity:.18;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g></svg>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="work.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+
+
+<script>
+/* ── Gallery Carousel Lightbox ── */
+(function(){
+  var lb        = document.getElementById('lb');
+  var lbImg     = document.getElementById('lb-img');
+  var lbClose   = document.getElementById('lb-close');
+  var lbPrev    = document.getElementById('lb-prev');
+  var lbNext    = document.getElementById('lb-next');
+  var lbCounter = document.getElementById('lb-counter');
+  var lbCaption = document.getElementById('lb-caption');
+  var lbDots    = document.getElementById('lb-dots');
+
+  var images = [];
+  var idx    = 0;
+
+  function open(imgs, i) {
+    images = imgs;
+    idx    = i;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    render();
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function go(i) {
+    if (i < 0 || i >= images.length) return;
+    lbImg.classList.add('fading');
+    setTimeout(function(){
+      idx = i;
+      lbImg.src = images[idx].src;
+      lbImg.alt = images[idx].alt || '';
+      lbImg.classList.remove('fading');
+      updateUI();
+    }, 120);
+  }
+
+  function render() {
+    lbImg.src = images[idx].src;
+    lbImg.alt = images[idx].alt || '';
+    updateUI();
+  }
+
+  function updateUI() {
+    lbCounter.textContent = (idx + 1) + ' / ' + images.length;
+    lbCaption.textContent = images[idx].alt || '';
+    lbPrev.disabled = idx === 0;
+    lbNext.disabled = idx === images.length - 1;
+    lbDots.innerHTML = '';
+    if (images.length > 1) {
+      images.forEach(function(_, i) {
+        var d = document.createElement('button');
+        d.className = 'lb-dot' + (i === idx ? ' active' : '');
+        d.setAttribute('aria-label', 'Go to image ' + (i + 1));
+        d.addEventListener('click', function(){ go(i); });
+        lbDots.appendChild(d);
+      });
+    }
+  }
+
+  lbClose.addEventListener('click', close);
+  lbPrev.addEventListener('click',  function(){ go(idx - 1); });
+  lbNext.addEventListener('click',  function(){ go(idx + 1); });
+  lb.addEventListener('click', function(e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function(e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  go(idx - 1);
+    if (e.key === 'ArrowRight') go(idx + 1);
+  });
+
+  document.querySelectorAll('.sec-img[data-gallery]').forEach(function(el) {
+    var imgs = JSON.parse(el.dataset.images);
+    el.addEventListener('click', function() { open(imgs, 0); });
+  });
+})();
+
+/* ── Mobile nav ── */
+(function(){
+  var btn=document.getElementById('navToggle'),ov=document.getElementById('mobileNav');
+  if(!btn||!ov)return;
+  btn.addEventListener('click',function(){var o=ov.classList.toggle('nav-open');btn.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';
+  });
+  ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ov.classList.remove('nav-open');btn.classList.remove('open');document.body.style.overflow='';
+  });});
+})();
+(function(){
+  var hdr=document.querySelector('.site-header');if(!hdr)return;
+  function u(){var p=Math.min((window.scrollY||window.pageYOffset)/600,1)*100;hdr.style.backgroundPosition=p+'% '+(40+p*.2)+'%';}
+  window.addEventListener('scroll',u,{passive:true});u();
+})();
+</script>
+</body>
+</html>
