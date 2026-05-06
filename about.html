@@ -3,263 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maliyah Ross | About</title>
+  <title>Built by Faith | About &amp; Contact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+  /* ── Combined about/contact page ── */
+  .ac-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;padding:4.5rem 0 5rem;}
+  .ac-left{position:relative;}
+  .ac-photo{border-radius:28px;overflow:hidden;background:linear-gradient(145deg,var(--blush),var(--dusty));position:relative;margin-bottom:1.75rem;}
+  .ac-photo img{width:100%;display:block;border-radius:28px;object-fit:cover;object-position:center top;}
+  .ac-photo-frame{position:absolute;inset:-8px;border:2px solid rgba(103,184,177,.25);border-radius:34px;pointer-events:none;}
+  .ac-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;}
+  .ac-right{display:flex;flex-direction:column;gap:0;}
+  /* Who I am block */
+  .who-block{margin-bottom:2.5rem;}
+  .who-block h2{font-size:clamp(2rem,3.5vw,2.8rem);margin:.4rem 0 1rem;line-height:1.05;}
+  .who-block p{font-size:.95rem;color:rgba(37,50,74,.68);line-height:1.75;margin-bottom:.85rem;}
+  /* Divider */
+  .ac-divider{display:flex;align-items:center;gap:1rem;margin:2rem 0;}
+  .ac-divider-line{flex:1;height:1px;background:rgba(37,50,74,.1);}
+  .ac-divider-flower{font-size:1rem;color:var(--coral);opacity:.5;}
+  /* Contact block */
+  .contact-block h3{font-family:'DM Serif Display',serif;font-size:1.6rem;font-style:italic;margin-bottom:.5rem;}
+  .contact-block > p{font-size:.9rem;color:rgba(37,50,74,.6);margin-bottom:1.5rem;}
+  .contact-cards{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem;}
+  .cc{display:flex;align-items:center;gap:.9rem;padding:1rem 1.25rem;background:white;border-radius:18px;border:1.5px solid rgba(37,50,74,.07);box-shadow:0 3px 14px rgba(37,50,74,.07);text-decoration:none;transition:all .22s ease;}
+  .cc:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(37,50,74,.12);border-color:rgba(103,184,177,.35);}
+  .cc-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .cc-icon-coral{background:rgba(255,111,97,.12);}
+  .cc-icon-teal{background:rgba(103,184,177,.13);}
+  .cc-lbl{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(37,50,74,.4);display:block;margin-bottom:.15rem;}
+  .cc-val{font-size:.9rem;font-weight:600;color:var(--navy);}
+  .open-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.25rem;}
+  @media(max-width:900px){.ac-wrap{grid-template-columns:1fr;gap:2.5rem;padding:3rem 0 4rem;}}
+  </style>
 </head>
 <body>
 
 <header class="site-header">
-  <!-- ✿ outer header flowers — left side (3 flowers, mirrors right) -->
   <div class="header-edge-flowers" style="position:absolute;left:0;top:0;bottom:0;width:200px;display:flex;align-items:center;gap:6px;padding-left:0;pointer-events:none;z-index:1;overflow:hidden;">
-    <!-- teal large, partly clipped left -->
-    <svg style="width:62px;height:62px;opacity:.34;flex-shrink:0;margin-left:-18px;" viewBox="0 0 100 100">
-      <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-    <!-- blush medium -->
-    <svg style="width:42px;height:42px;opacity:.30;flex-shrink:0;" viewBox="0 0 100 100">
-      <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/><circle cx="50" cy="50" r="5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-    <!-- sage small -->
-    <svg style="width:28px;height:28px;opacity:.24;flex-shrink:0;" viewBox="0 0 100 100">
-      <g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#c5c8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
+    <svg style="width:62px;height:62px;opacity:.34;flex-shrink:0;margin-left:-18px;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g></svg>
+    <svg style="width:42px;height:42px;opacity:.30;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/></g></svg>
+    <svg style="width:28px;height:28px;opacity:.24;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/></g></svg>
   </div>
-
-  <!-- ✿ outer header flowers — right side -->
   <div class="header-edge-flowers" style="position:absolute;right:0;top:0;bottom:0;width:180px;display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-right:12px;pointer-events:none;z-index:1;overflow:hidden;">
-    <!-- dusty tiny -->
-    <svg style="width:26px;height:26px;opacity:.22;flex-shrink:0;" viewBox="0 0 100 100">
-      <g fill="#afc7d8"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#afc7d8" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-    <!-- mustard medium -->
-    <svg style="width:40px;height:40px;opacity:.3;flex-shrink:0;" viewBox="0 0 100 100">
-      <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/><circle cx="50" cy="50" r="5" fill="#d6b73f" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-    <!-- coral large, partly clipped right -->
-    <svg style="width:60px;height:60px;opacity:.32;flex-shrink:0;margin-right:-16px;" viewBox="0 0 100 100">
-      <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
+    <svg style="width:26px;height:26px;opacity:.22;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#afc7d8"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/></g></svg>
+    <svg style="width:40px;height:40px;opacity:.3;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/></g></svg>
+    <svg style="width:60px;height:60px;opacity:.32;flex-shrink:0;margin-right:-16px;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/></g></svg>
   </div>
-
   <div class="container nav-wrap">
-   <div class="logo-slot"><img height="200" width="200" src="Logosvari-03.png" /></div>
+    <div class="logo-slot"><img height="200" width="200" src="Logosvari-03.png" /></div>
     <nav><ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="work.html">Projects</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="work.html">Design &amp; Photos</a></li>
+      <li><a href="about.html">About &amp; Contact</a></li>
     </ul></nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main>
-
-
-
-<!-- ABOUT SPLIT -->
-<section class="section" style="overflow:hidden;">
-  <!-- more hibiscus scattered -->
-  <svg class="hib hib-4" style="top:40px;right:0%;width:90px;opacity:.09;" viewBox="0 0 100 100">
-    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-6" style="bottom:80px;left:0%;width:75px;opacity:.09;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-3" style="top:55%;right:1%;width:55px;opacity:.09;" viewBox="0 0 100 100">
-    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
+<section style="overflow:hidden;background:var(--cream);position:relative;">
+  <svg class="hib hib-2" style="top:-30px;right:-10px;width:140px;opacity:.07;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/></g></svg>
+  <svg class="hib hib-5" style="bottom:-20px;left:0%;width:100px;opacity:.07;" viewBox="0 0 100 100"><g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/></g></svg>
 
   <div class="container">
-    <div class="about-split">
-      <!-- Visual panel -->
-      <div class="about-visual">
-        <div class="about-bg"></div>
-        <!-- hibiscus inside visual -->
-        <svg class="hib hib-2" style="top:1rem;right:1.5rem;width:72px;opacity:.28;" viewBox="0 0 100 100">
-          <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-        </svg>
-        <svg class="hib hib-5" style="bottom:3.5rem;left:1.5rem;width:52px;opacity:.22;" viewBox="0 0 100 100">
-          <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-        </svg>
-        <svg class="hib hib-4" style="top:40%;left:1rem;width:38px;opacity:.2;" viewBox="0 0 100 100">
-          <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-        </svg>
-        <div class="about-img-ph">
+    <div class="ac-wrap">
+
+      <!-- LEFT: Photo + skills -->
+      <div class="ac-left">
+        <div class="ac-photo">
           <img src="home2.png" alt="Maliyah Ross" />
+          <div class="ac-photo-frame"></div>
+        </div>
+        
+        <a class="btn btn-secondary" style="width:100%;justify-content:center;" href="Maliyah Ross CL_Resume.pdf">Download Resume ✦</a>
+      </div>
+
+      <!-- RIGHT: Who I am + contact -->
+      <div class="ac-right">
+        <div class="who-block">
+          <span class="eyebrow">Personal Trainer &middot; Photographer &middot; Designer</span>
+          <h2 class="serif">Hey, I'm <span style="color:var(--coral);font-style:italic;">Maliyah.</span></h2>
+          <p>I wear a few hats — and I'm proud of every one of them. I'm a certified personal trainer who genuinely loves watching people transform. I'm a photographer who finds the shot nobody else sees. And I'm a graphic designer who builds brands that don't just look good, they work.</p>
+          <p>Everything I do is built by faith — meaning I show up fully, I don't cut corners, and I care about what happens after you leave my inbox. Whether we're designing your brand, shooting your event, or building your fitness plan, you'll always get my best.</p>
+          <p>Based in Phoenix. Open to remote work. Powered by intention.</p>
+        </div>
+
+        <!-- divider -->
+        <div class="ac-divider">
+          <div class="ac-divider-line"></div>
+          <span class="ac-divider-flower">✿</span>
+          <div class="ac-divider-line"></div>
+        </div>
+
+        <!-- Contact block -->
+        <div class="contact-block" id="contact">
+          <h3>Let's work together.</h3>
+          <p>I'm open to training clients, design projects, photography shoots, and brand collaborations. </p>
+
+          <div class="contact-cards">
+            <a href="mailto:builtbyfaith247@gmail.com" class="cc">
+              <div class="cc-icon cc-icon-coral">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff6f61" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              </div>
+              <div>
+                <span class="cc-lbl">Email</span>
+                <span class="cc-val">builtbyfaith247@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:4802777525" class="cc">
+              <div class="cc-icon cc-icon-teal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#67b8b1" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.87 12 19.79 19.79 0 0 1 1.82 3.4 2 2 0 0 1 3.79 1.21h3a2 2 0 0 1 2 1.72c.195.96.446 1.903.75 2.82a2 2 0 0 1-.45 2.11L8.09 8.91A16 16 0 0 0 15 15.91l.96-.96a2 2 0 0 1 2.11-.45c.917.304 1.86.555 2.82.75A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <span class="cc-lbl">Phone</span>
+                <span class="cc-val">480-277-7525</span>
+              </div>
+            </a>
+          </div>
+
+          <p style="font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(37,50,74,.38);margin-bottom:.6rem;">Open to</p>
+          <div class="open-tags">
+            <span class="tag">Personal Training</span>
+            <span class="tag t-coral">Freelance Design</span>
+            <span class="tag t-mustard">Photography</span>
+            <span class="tag">Brand Identity</span>
+            <span class="tag t-coral">Campaigns</span>
+          </div>
         </div>
       </div>
 
-      <!-- Text -->
-      <div class="about-text">
-        <span class="eyebrow">Background</span>
-        <h2 class="serif" style="font-size:clamp(1.9rem,3.5vw,2.8rem);margin:.5rem 0 1rem;">Hi, I'm <span style="color:var(--coral);font-style:italic;">Maliyah!</span></h2>
-        <p>I'm Maliyah Ross — a graphic designer with hands-on experience in advertising, marketing visuals, and brand development. I help businesses and brands show up with confidence through design that is strategic, visually strong, and built to drive results.</p>
-        <p>My work covers the full advertising toolkit: out-of-home campaigns, print collateral, digital graphics, social media assets, brand identity systems, and editorial layouts. I understand how design serves marketing goals — and I bring that thinking to every project, whether it's a billboard, a brand refresh, or a full campaign rollout.</p>
-        <div class="skill-pills">
-          <span class="pill">Adobe InDesign</span>
-          <span class="pill">Illustrator</span>
-          <span class="pill">Photoshop</span>
-          <span class="pill">Canva</span>
-          <span class="pill">Microsoft Office</span>
-        </div>
-        <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
-          <a class="btn btn-primary" href="Maliyah Ross CL_Resume.pdf">Download Cover Letter and Resume ✦</a>
-          <a class="btn btn-secondary" href="contact.html">Work Together</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Info cards -->
-    <div class="info-row">
-      <div class="info-card">
-        <div class="info-icon">🎨</div>
-        <h3 class="serif">What I do</h3>
-        <p>Brand identity, OOH campaigns, print design, editorial layout, campaign visuals, and portfolio-ready presentation across print and digital formats.</p>
-        <svg style="position:absolute;bottom:1rem;right:1rem;opacity:.12;width:42px;" viewBox="0 0 100 100">
-          <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-        </svg>
-      </div>
-      <div class="info-card">
-        <div class="info-icon">🛠️</div>
-        <h3 class="serif">My tools</h3>
-        <p>Adobe InDesign, Illustrator, Photoshop, Canva, and the full Microsoft Office Suite — used to build layouts, campaign visuals, and polished portfolio pieces.</p>
-        <svg style="position:absolute;bottom:1rem;right:1rem;opacity:.12;width:42px;" viewBox="0 0 100 100">
-          <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-        </svg>
-      </div>
-      <div class="info-card">
-        <div class="info-icon">🌺</div>
-        <h3 class="serif">Always growing</h3>
-        <p>Continuously expanding my skills across branding, advertising, and digital design — taking on new freelance projects and collaborating with clients who value bold, intentional creative work.</p>
-        <svg style="position:absolute;bottom:1rem;right:1rem;opacity:.12;width:42px;" viewBox="0 0 100 100">
-          <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section" style="padding:2rem 0 4rem;overflow:hidden;">
-  <svg class="hib hib-3" style="top:-20px;right:3%;width:100px;opacity:.1;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-5" style="bottom:-10px;left:2%;width:80px;opacity:.09;" viewBox="0 0 100 100">
-    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <div class="container">
-    <div class="cta-block">
-      <div>
-        <span class="eyebrow">Work together</span>
-        <h2 class="serif" style="margin:.5rem 0 .5rem;">Let's make something <span style="color:var(--coral);font-style:italic;">amazing.</span></h2>
-        <p>Have a project in mind or looking for a creative collaborator? I'd love to hear about it.</p>
-      </div>
-      <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
-        <a class="btn btn-primary" href="contact.html">Contact Me ✿</a>
-        <a class="btn btn-secondary" href="work.html">See My Work</a>
-      </div>
     </div>
   </div>
 </section>
-
 </main>
 
 <footer class="footer" style="position:relative;overflow:hidden;">
-  <svg style="position:absolute;bottom:-8px;right:22%;width:46px;opacity:.12;pointer-events:none;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg style="position:absolute;top:-5px;left:10%;width:34px;opacity:.1;pointer-events:none;" viewBox="0 0 100 100">
-    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
+  <svg style="position:absolute;bottom:-8px;right:22%;width:46px;opacity:.12;pointer-events:none;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/></g></svg>
   <div class="container footer-grid">
-    <span class="footer-brand">&nbsp;</span>
+    <span class="footer-brand">Built by Faith ✿</span>
     <div class="footer-links">
       <a href="https://www.instagram.com/builtbyfaith4" target="_blank">Instagram</a>
       <a href="https://www.behance.net/maliyahross" target="_blank">Behance</a>
       <a href="https://www.linkedin.com/in/maliyah-ross-400322330/" target="_blank">LinkedIn</a>
+      <a href="https://app.built-by-faith.com/" target="_blank">App</a>
       <a href="mailto:builtbyfaith247@gmail.com">Email</a>
-   
     </div>
-    <span class="footer-copy">© 2026</span>
+    <span class="footer-copy">&#169; 2026 Maliyah Ross</span>
   </div>
 </footer>
 
-
-
-<!-- ✿ Mobile nav overlay -->
 <div class="mobile-nav-overlay" id="mobileNav">
-  <!-- corner hibiscus flowers -->
-  <svg class="mob-hib" style="top:-20px;left:-20px;width:140px;opacity:.18;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="top:5px;left:100px;width:80px;opacity:.14;" viewBox="0 0 100 100">
-    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="top:-20px;right:-20px;width:130px;opacity:.18;" viewBox="0 0 100 100">
-    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="top:80px;right:60px;width:65px;opacity:.13;" viewBox="0 0 100 100">
-    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="bottom:-20px;left:-20px;width:150px;opacity:.17;" viewBox="0 0 100 100">
-    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="bottom:60px;left:80px;width:70px;opacity:.13;" viewBox="0 0 100 100">
-    <g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="bottom:-20px;right:-20px;width:140px;opacity:.17;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="bottom:70px;right:50px;width:60px;opacity:.12;" viewBox="0 0 100 100">
-    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-
+  <svg class="mob-hib" style="top:-20px;left:-20px;width:140px;opacity:.18;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/></g></svg>
+  <svg class="mob-hib" style="bottom:-20px;right:-20px;width:140px;opacity:.17;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/></g></svg>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="work.html">Projects</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="work.html">Design &amp; Photos</a></li>
+    <li><a href="about.html">About &amp; Contact</a></li>
   </ul>
 </div>
+
 <script>
-/* ── Mobile nav toggle ── */
-(function(){
-  var btn    = document.getElementById('navToggle');
-  var overlay = document.getElementById('mobileNav');
-  if(!btn || !overlay) return;
-
-  btn.addEventListener('click', function(){
-    var open = overlay.classList.toggle('nav-open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  overlay.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      overlay.classList.remove('nav-open');
-      btn.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-})();
-
-/* ── Watercolor wash shifts on scroll ── */
-(function(){
-  var hdr = document.querySelector('.site-header');
-  if(!hdr) return;
-  function update(){
-    var pct = Math.min((window.scrollY||window.pageYOffset) / 600, 1) * 100;
-    hdr.style.backgroundPosition = pct + '% ' + (40 + pct * .2) + '%';
-  }
-  window.addEventListener('scroll', update, {passive:true});
-  update();
-})();
+(function(){var btn=document.getElementById('navToggle');var overlay=document.getElementById('mobileNav');if(!btn||!overlay)return;btn.addEventListener('click',function(){var open=overlay.classList.toggle('nav-open');btn.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';});overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){overlay.classList.remove('nav-open');btn.classList.remove('open');document.body.style.overflow='';});});})();
+(function(){var hdr=document.querySelector('.site-header');if(!hdr)return;function update(){var pct=Math.min((window.scrollY||window.pageYOffset)/600,1)*100;hdr.style.backgroundPosition=pct+'% '+(40+pct*.2)+'%';}window.addEventListener('scroll',update,{passive:true});update();})();
 </script>
 </body>
 </html>

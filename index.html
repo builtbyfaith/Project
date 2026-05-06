@@ -3,213 +3,180 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maliyah Ross | Graphic Designer</title>
+  <title>Built by Faith | Personal Training & Creative Design</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+<style>
+/* App announcement bar */
+.app-bar{background:var(--navy);padding:.65rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:1rem;position:relative;z-index:60;overflow:hidden;}
+.app-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(103,184,177,.2) 40%,rgba(255,111,97,.18) 70%,transparent 100%);animation:bar-glow 3.5s ease-in-out infinite;}
+@keyframes bar-glow{0%,100%{opacity:.5;}50%{opacity:1;}}
+.app-pill{display:inline-flex;align-items:center;gap:.35rem;background:var(--coral);color:white;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .8rem;border-radius:999px;flex-shrink:0;position:relative;z-index:1;animation:pulse-ring 2.6s ease-in-out infinite;}
+@keyframes pulse-ring{0%,100%{box-shadow:0 0 0 0 rgba(255,111,97,.55);}55%{box-shadow:0 0 0 8px rgba(255,111,97,0);}}
+.app-bar-copy{font-size:.84rem;color:rgba(255,255,255,.9);font-weight:400;position:relative;z-index:1;}
+.app-bar-copy strong{color:white;font-weight:700;}
+.app-bar-sep{width:1px;height:14px;background:rgba(255,255,255,.18);position:relative;z-index:1;flex-shrink:0;}
+.app-bar-cta{display:inline-flex;align-items:center;gap:.35rem;color:var(--teal);font-size:.82rem;font-weight:700;text-decoration:none;position:relative;z-index:1;transition:color .2s;flex-shrink:0;white-space:nowrap;}
+.app-bar-cta:hover{color:#8fd8d2;}
+.app-bar-cta svg{transition:transform .2s;}
+.app-bar-cta:hover svg{transform:translateX(3px);}
+/* Hero — text side only, right side becomes app card */
+.home-hero-right{display:flex;flex-direction:column;gap:1.25rem;}
+.app-hero-card{background:var(--navy);border-radius:28px;padding:2.25rem 2rem;position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(37,50,74,.22);}
+.app-hero-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(103,184,177,.22) 0%,transparent 55%),radial-gradient(circle at 20% 80%,rgba(255,111,97,.15) 0%,transparent 50%);}
+.app-hero-card-inner{position:relative;z-index:1;}
+.app-hero-card h3{font-family:'DM Serif Display',serif;font-size:1.6rem;font-style:italic;color:white;margin:.5rem 0 .75rem;line-height:1.1;}
+.app-hero-card p{font-size:.88rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:1.4rem;}
+.app-hero-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.5rem;}
+.app-badge{font-size:.62rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:.25rem .7rem;border-radius:999px;}
+.app-badge-coral{background:rgba(255,111,97,.2);color:#ff9086;}
+.app-badge-teal{background:rgba(103,184,177,.2);color:#8fd8d2;}
+.app-badge-gold{background:rgba(214,183,63,.2);color:#e8ca5a;}
+.btn-app-hero{display:inline-flex;align-items:center;gap:.5rem;background:var(--coral);color:white;padding:.9rem 1.75rem;border-radius:999px;font-weight:700;font-size:.88rem;box-shadow:0 6px 24px rgba(255,111,97,.42);transition:all .22s ease;text-decoration:none;}
+.btn-app-hero:hover{background:#e85f52;transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,111,97,.52);}
+.app-url-hint{font-size:.68rem;color:rgba(255,255,255,.3);margin-top:.6rem;}
+/* Nav row below marquee */
+.home-nav-row{display:flex;align-items:center;justify-content:center;gap:1rem;padding:2rem 1.5rem 3rem;}
+.home-nav-row .btn{min-width:150px;justify-content:center;}
+@media(max-width:720px){.app-bar{flex-wrap:wrap;gap:.5rem;text-align:center;padding:.8rem 1rem;}.app-bar-copy{font-size:.76rem;}.app-bar-sep{display:none;}.home-nav-row{padding-bottom:2.5rem;}}
+</style>
 </head>
 <body>
 
+<!-- ✦ APP BAR — very first thing on the page -->
+<div class="app-bar">
+  <span class="app-pill">
+    <svg width="7" height="7" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="white"/></svg>
+    Live Now
+  </span>
+  <span class="app-bar-copy">The <strong>Built by Faith App</strong> is here — a wellness app designed with <em style="font-style:italic;color:rgba(255,255,255,.95);">women</em> in mind.</span>
+  <div class="app-bar-sep"></div>
+  <a class="app-bar-cta" href="https://app.built-by-faith.com/" target="_blank">
+    Open the App
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+</div>
+
 <header class="site-header">
-  <!-- ✿ outer header flowers — left side (3 flowers, mirrors right) -->
   <div class="header-edge-flowers" style="position:absolute;left:0;top:0;bottom:0;width:200px;display:flex;align-items:center;gap:6px;padding-left:0;pointer-events:none;z-index:1;overflow:hidden;">
-    <!-- teal large, partly clipped left -->
-    <svg style="width:62px;height:62px;opacity:.34;flex-shrink:0;margin-left:-18px;" viewBox="0 0 100 100">
-      <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-    <!-- blush medium -->
-    <svg style="width:42px;height:42px;opacity:.30;flex-shrink:0;" viewBox="0 0 100 100">
-      <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/><circle cx="50" cy="50" r="5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-    <!-- sage small -->
-    <svg style="width:28px;height:28px;opacity:.24;flex-shrink:0;" viewBox="0 0 100 100">
-      <g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#c5c8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
+    <svg style="width:62px;height:62px;opacity:.34;flex-shrink:0;margin-left:-18px;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g></svg>
+    <svg style="width:42px;height:42px;opacity:.30;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/></g></svg>
+    <svg style="width:28px;height:28px;opacity:.24;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/></g></svg>
   </div>
-
-  <!-- ✿ outer header flowers — right side -->
   <div class="header-edge-flowers" style="position:absolute;right:0;top:0;bottom:0;width:180px;display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-right:12px;pointer-events:none;z-index:1;overflow:hidden;">
-    <!-- dusty tiny -->
-    <svg style="width:26px;height:26px;opacity:.22;flex-shrink:0;" viewBox="0 0 100 100">
-      <g fill="#afc7d8"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#afc7d8" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-    <!-- mustard medium -->
-    <svg style="width:40px;height:40px;opacity:.3;flex-shrink:0;" viewBox="0 0 100 100">
-      <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/><circle cx="50" cy="50" r="5" fill="#d6b73f" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-    <!-- coral large, partly clipped right -->
-    <svg style="width:60px;height:60px;opacity:.32;flex-shrink:0;margin-right:-16px;" viewBox="0 0 100 100">
-      <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
+    <svg style="width:26px;height:26px;opacity:.22;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#afc7d8"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/></g></svg>
+    <svg style="width:40px;height:40px;opacity:.3;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/></g></svg>
+    <svg style="width:60px;height:60px;opacity:.32;flex-shrink:0;margin-right:-16px;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/></g></svg>
   </div>
-
   <div class="container nav-wrap">
     <div class="logo-slot"><img height="200" width="200" src="Logosvari-03.png" /></div>
     <nav><ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="work.html">Projects</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="work.html">Design &amp; Photos</a></li>
+      <li><a href="about.html">About &amp; Contact</a></li>
     </ul></nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- HERO — text left, app card right -->
 <section class="hero">
-  <div class="blob" style="width:440px;height:440px;background:rgba(103,184,177,.09);top:-150px;right:-130px;"></div>
-  <div class="blob" style="width:300px;height:280px;background:rgba(255,111,97,.07);bottom:-90px;left:-90px;"></div>
-  <div class="blob" style="width:200px;height:180px;background:rgba(214,183,63,.08);top:30%;left:42%;"></div>
-
-  <svg class="hib" style="top:-15px;right:2%;width:140px;opacity:.2;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-3" style="top:22%;right:47%;width:60px;opacity:.13;" viewBox="0 0 100 100">
-    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-2" style="top:50%;left:0%;width:75px;opacity:.14;" viewBox="0 0 100 100">
-    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-4" style="bottom:5px;right:6%;width:95px;opacity:.15;" viewBox="0 0 100 100">
-    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-5" style="bottom:8%;left:5%;width:55px;opacity:.14;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-6" style="top:8%;left:10%;width:42px;opacity:.11;" viewBox="0 0 100 100">
-    <g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
+  <div class="blob" style="width:380px;height:380px;background:rgba(103,184,177,.09);top:-120px;right:-100px;"></div>
+  <div class="blob" style="width:260px;height:240px;background:rgba(255,111,97,.06);bottom:-70px;left:-70px;"></div>
+  <svg class="hib" style="top:-10px;right:2%;width:120px;opacity:.18;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/></g></svg>
+  <svg class="hib hib-3" style="bottom:5%;left:1%;width:65px;opacity:.12;" viewBox="0 0 100 100"><g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/></g></svg>
 
   <div class="container hero-grid">
+    <!-- LEFT: text -->
     <div>
-      <span class="eyebrow">Advertising &amp; Graphic Design</span>
-      <h1 class="serif">Bright ideas.<br><span class="accent">Creative</span> design.</h1>
-      <p>Brand identity, campaign design, and polished print layouts — work that's energetic, professional, and built to connect with real audiences.</p>
+      <span class="eyebrow">Personal Training · Photography · Graphic Design</span>
+      <h1 class="serif">Built by <span class="accent">Faith.</span><br>Designed to <em>move</em> you.</h1>
+      <p>I'm Maliyah — a personal trainer, photographer, and graphic designer. I help people get stronger, show up on camera, and build brands that actually turn heads. Everything here starts with faith and ends with results.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="work.html">See My Work</a>
-        <a class="btn btn-secondary" href="about.html">About Me</a>
+        <a class="btn btn-primary" href="training.html">Start Training ✦</a>
+        <a class="btn btn-secondary" href="work.html">View My Work</a>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hero-card-wrap">
-        <div class="hero-card-back"></div>
-        <div class="hero-card">
-          <div class="spin-badge"><div class="spin-badge-inner">Spring<br>2026<br>✿</div></div>
-          <div class="hero-img-ph"><span class="ph-label"><img src="home2.png" /></span></div>
-          <div class="hero-card-foot">
-            <h3>Maliyah Ross</h3>
-            <p>GCU · Advertising &amp; Graphic Design · Class of 2026</p>
+
+    <!-- RIGHT: app marketing card -->
+    <div class="home-hero-right">
+      <div class="app-hero-card">
+        <div class="app-hero-card-inner">
+          <span class="eyebrow" style="background:rgba(103,184,177,.2);color:#8fd8d2;">Built for Her &nbsp;✿&nbsp; Now Live</span>
+          <h3>Wellness, your way.<br><em>Made for women.</em></h3>
+          <p>Cycle-aware workouts, hormonal wellness support, and programs built around how a woman's body actually works</p>
+          <div class="app-hero-badges">
+            <span class="app-badge app-badge-coral">Cycle-Aware Training</span>
+            <span class="app-badge app-badge-teal">Hormonal Wellness</span>
+            <span class="app-badge app-badge-gold">Built for Her Body</span>
           </div>
+          <a class="btn-app-hero" href="https://app.built-by-faith.com/" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg>
+            Sign Up Free ✦
+          </a>
+          <p class="app-url-hint">app.built-by-faith.com</p>
+          <p style="font-size:.65rem;color:rgba(255,255,255,.28);margin-top:.35rem;line-height:1.5;">Personal training sessions open to all — <a href="training.html" style="color:rgba(103,184,177,.55);text-decoration:none;">see training programs</a></p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BAND -->
+<!-- SCROLLING MARQUEE -->
 <div class="band">
   <div class="band-track">
-    <span class="dot">✿</span><span>Brand Identity</span><span class="dot">✿</span><span>OOH Campaigns</span><span class="dot">✿</span><span>Editorial Layout</span><span class="dot">✿</span><span>Digital Graphics</span><span class="dot">✿</span><span>Print Design</span><span class="dot">✿</span><span>Typography</span><span class="dot">✿</span><span>Brand Identity</span><span class="dot">✿</span><span>OOH Campaigns</span><span class="dot">✿</span><span>Editorial Layout</span><span class="dot">✿</span><span>Digital Graphics</span><span class="dot">✿</span><span>Print Design</span><span class="dot">✿</span><span>Typography</span>
+    <span class="dot">✿</span><span>Personal Training</span><span class="dot">✿</span><span>Photography</span><span class="dot">✿</span><span>Graphic Design</span><span class="dot">✿</span><span>Brand Identity</span><span class="dot">✿</span><span>Fitness Coaching</span><span class="dot">✿</span><span>Built by Faith</span><span class="dot">✿</span><span>Personal Training</span><span class="dot">✿</span><span>Photography</span><span class="dot">✿</span><span>Graphic Design</span><span class="dot">✿</span><span>Brand Identity</span><span class="dot">✿</span><span>Fitness Coaching</span><span class="dot">✿</span><span>Built by Faith</span>
   </div>
 </div>
 
-<!-- DETAILS SECTION -->
-<section class="section" style="background:white;overflow:hidden;">
-  <svg class="hib hib-2" style="top:-45px;right:-25px;width:170px;opacity:.08;" viewBox="0 0 100 100">
-    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
-  <svg class="hib hib-5" style="bottom:-25px;left:0%;width:110px;opacity:.09;" viewBox="0 0 100 100">
-    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".7"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".75"/></g>
-  </svg>
- 
+<!-- TWO CLEAN BUTTONS — nothing else below -->
+<div class="home-nav-row">
+  <a class="btn btn-secondary" href="about.html">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    About Me
+  </a>
+  <a class="btn btn-primary" href="about.html#contact">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+    Get In Touch
+  </a>
+</div>
+
+</main>
+
+<footer class="footer" style="position:relative;overflow:hidden;">
+  <svg style="position:absolute;bottom:-8px;right:22%;width:46px;opacity:.12;pointer-events:none;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/></g></svg>
   <div class="container footer-grid">
-    <span class="footer-brand">&nbsp;</span>
+    <span class="footer-brand">Built by Faith ✿</span>
     <div class="footer-links">
       <a href="https://www.instagram.com/builtbyfaith4" target="_blank">Instagram</a>
       <a href="https://www.behance.net/maliyahross" target="_blank">Behance</a>
       <a href="https://www.linkedin.com/in/maliyah-ross-400322330/" target="_blank">LinkedIn</a>
+      <a href="https://app.built-by-faith.com/" target="_blank">App</a>
       <a href="mailto:builtbyfaith247@gmail.com">Email</a>
-     
     </div>
-    <span class="footer-copy">© 2026</span>
+    <span class="footer-copy">© 2026 Maliyah Ross</span>
   </div>
 </footer>
 
-
-
-<!-- ✿ Mobile nav overlay -->
 <div class="mobile-nav-overlay" id="mobileNav">
-  <!-- corner hibiscus flowers -->
-  <svg class="mob-hib" style="top:-20px;left:-20px;width:140px;opacity:.18;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="top:5px;left:100px;width:80px;opacity:.14;" viewBox="0 0 100 100">
-    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><circle cx="50" cy="50" r="5.5" fill="#e8b8be" opacity=".6"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="top:-20px;right:-20px;width:130px;opacity:.18;" viewBox="0 0 100 100">
-    <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#67b8b1" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="top:80px;right:60px;width:65px;opacity:.13;" viewBox="0 0 100 100">
-    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="bottom:-20px;left:-20px;width:150px;opacity:.17;" viewBox="0 0 100 100">
-    <g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/><circle cx="50" cy="50" r="5.5" fill="#d6b73f" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="bottom:60px;left:80px;width:70px;opacity:.13;" viewBox="0 0 100 100">
-    <g fill="#c5c8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="bottom:-20px;right:-20px;width:140px;opacity:.17;" viewBox="0 0 100 100">
-    <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/><circle cx="50" cy="50" r="5.5" fill="#ff6f61" opacity=".65"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-  <svg class="mob-hib" style="bottom:70px;right:50px;width:60px;opacity:.12;" viewBox="0 0 100 100">
-    <g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#67b8b1"/><line x1="50" y1="50" x2="50" y2="30" stroke="#d6b73f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="28" r="2.8" fill="#d6b73f" opacity=".85"/></g>
-  </svg>
-
+  <svg class="mob-hib" style="top:-20px;left:-20px;width:140px;opacity:.18;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/></g></svg>
+  <svg class="mob-hib" style="bottom:-20px;right:-20px;width:140px;opacity:.17;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/></g></svg>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="work.html">Projects</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="work.html">Design &amp; Photos</a></li>
+    <li><a href="about.html">About &amp; Contact</a></li>
   </ul>
 </div>
+
 <script>
-/* ── Mobile nav toggle ── */
-(function(){
-  var btn    = document.getElementById('navToggle');
-  var overlay = document.getElementById('mobileNav');
-  if(!btn || !overlay) return;
-
-  btn.addEventListener('click', function(){
-    var open = overlay.classList.toggle('nav-open');
-    btn.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  overlay.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      overlay.classList.remove('nav-open');
-      btn.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-})();
-
-/* ── Watercolor wash shifts on scroll ── */
-(function(){
-  var hdr = document.querySelector('.site-header');
-  if(!hdr) return;
-  function update(){
-    var pct = Math.min((window.scrollY||window.pageYOffset) / 600, 1) * 100;
-    hdr.style.backgroundPosition = pct + '% ' + (40 + pct * .2) + '%';
-  }
-  window.addEventListener('scroll', update, {passive:true});
-  update();
-})();
+(function(){var btn=document.getElementById('navToggle');var overlay=document.getElementById('mobileNav');if(!btn||!overlay)return;btn.addEventListener('click',function(){var open=overlay.classList.toggle('nav-open');btn.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';});overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){overlay.classList.remove('nav-open');btn.classList.remove('open');document.body.style.overflow='';});});})();
+(function(){var hdr=document.querySelector('.site-header');if(!hdr)return;function update(){var pct=Math.min((window.scrollY||window.pageYOffset)/600,1)*100;hdr.style.backgroundPosition=pct+'% '+(40+pct*.2)+'%';}window.addEventListener('scroll',update,{passive:true});update();})();
 </script>
 </body>
 </html>
