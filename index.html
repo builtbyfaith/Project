@@ -118,7 +118,7 @@ footer .fine{max-width:40em;font-size:13px}
 .bloom .pt{transform-origin:50px 50px;transform:scale(0);transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
 .bloom .pt.on{transform:scale(1)}
 .qhead h3{font-size:clamp(20px,2.8vw,24px);line-height:1.15;font-weight:900}
-.qbody{padding:18px 20px;display:flex;flex-direction:column;gap:10px;min-height:240px}
+.qbody{padding:18px 20px;display:flex;flex-direction:column;gap:10px}
 .hint{color:var(--muted)}
 .multi{align-self:flex-start;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--butter-soft);padding:6px 12px;border-radius:999px}
 .opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -256,7 +256,7 @@ function intro(){
   head("Start here","For anyone done guessing","Find your strength plan");
   box.innerHTML='<p class="hint">Six gentle questions. Every answer opens a petal. When your flower is in full bloom, you will see your program, why it fits you, and your first week.</p>'+
     
-    '<button class="cta" id="go" style="margin-top:auto">Start my Built by Faith path</button>';
+    '<button class="cta" id="go" style="margin-top:6px">Start my Built by Faith path</button>';
   document.getElementById('go').onclick=()=>{i=0;render();};
 }
 function render(){
