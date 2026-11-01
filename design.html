@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Photography and graphic design by Maliyah Ross. Portfolio, pricing and a free creative call.">
+<link rel="icon" href="img/logo-mr.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}footer .contact{font-size:14px;color:#C9D3E0}footer .contact a{color:#9ED3CF;text-decoration:none;font-weight:700}
+</style>
+<title>Photo and Design Studio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,800;0,9..144,900;1,9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap">
+<style>
+:root{color-scheme:light;
+  --bg:#FAF8F5;--alt:#FFFFFF;--card:#FFFFFF;--ink:#1F2A33;--muted:#5E676E;--line:#ECE3DA;
+  --coral:#C4553E;--coral-soft:#F7DDD6;--pink:#F0A99C;--mint:#9ED3CF;--mint-soft:#E3F2EF;--butter:#E7DCA2;--butter-soft:#F6F0D6;--blush-soft:#F4EFEA;--sage:#7FA77A;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;--body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+.in{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.02em;color:var(--ink)}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:999px;font:inherit;font-weight:800;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-line{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-block{width:100%}
+/* header */
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--card)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;min-height:62px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:900;font-size:19px;text-decoration:none}
+.logo em{font-style:italic;color:var(--coral)}
+.links{display:flex;gap:4px}
+.links a{text-decoration:none;font-weight:700;font-size:15px;padding:9px 14px;border-radius:999px;color:var(--muted)}
+.links a:hover,.links a[aria-current]{color:var(--ink);background:var(--bg)}
+.nav-cta{justify-self:end;min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:820px){.nav{grid-template-columns:1fr auto}.links{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--bg);text-align:center}
+.hero .in{position:relative;z-index:1;padding-block:44px 44px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.hero h1{font-size:clamp(32px,4.6vw,46px);line-height:1.08;font-weight:900;max-width:14em}
+.hero h1 em{font-style:italic;font-weight:700;color:var(--coral)}
+.hero .lead{font-size:16px;color:var(--muted);max-width:34em}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:44em}
+.chips span{font-size:14px;font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.verse{font-family:var(--display);font-style:italic;font-weight:700;color:var(--muted);font-size:14px}
+.fl{position:absolute;pointer-events:none;animation:bob 5s ease-in-out infinite;opacity:.55}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(14deg)}}
+/* bands */
+.band{border-top:1px solid var(--line);padding-block:48px}
+
+.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;max-width:34em;margin:0 auto 28px}
+.head-ic{width:44px;height:44px;border-radius:12px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;box-shadow:0 4px 14px rgba(31,42,51,.06)}
+.head h2{font-size:clamp(24px,3.2vw,30px);line-height:1.08;font-weight:900}
+.head p{color:var(--muted);font-size:15px}
+/* cards */
+.cards{display:grid;gap:16px}
+.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:980px){.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.c3{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+@media (max-width:540px){.c4{grid-template-columns:1fr;max-width:420px;margin-inline:auto}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;min-width:0;position:relative}
+.card.hl{border:2px solid var(--coral)}
+.badge{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--coral);color:#fff;padding:4px 10px;border-radius:999px}
+.ct{padding:18px 20px;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid var(--line)}
+.ct .ic{width:36px;height:36px;border-radius:12px;background:var(--card);display:grid;place-items:center;margin-bottom:4px}
+.ct h3{font-size:18px;font-weight:900;line-height:1.1}
+.ct p{color:var(--muted);font-size:14px;line-height:1.45}
+.t-blush{background:var(--blush-soft)}.t-mint{background:var(--mint-soft)}.t-butter{background:var(--butter-soft)}.t-plain{background:var(--bg)}
+.cb{padding:16px 20px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.price{font-family:var(--display);font-weight:900;font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+.price small{font-family:var(--body);font-size:15px;font-weight:700;color:var(--muted)}
+.price.free{color:var(--coral)}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.checks li{display:flex;gap:8px;font-size:14px}
+.checks svg{flex:0 0 18px;margin-top:4px;color:var(--sage)}
+.cb .btn{margin-top:auto}
+.note{text-align:center;color:var(--muted);font-size:15px;margin-top:24px}
+.step-n{width:34px;height:34px;border-radius:50%;background:var(--card);color:var(--coral);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:20px;margin-bottom:4px}
+/* forms */
+.form-card{max-width:600px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 20px 50px rgba(31,42,51,.06)}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fgrid .full{grid-column:1/-1}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:14px;font-weight:800}
+.field input,.field select,.field textarea{font:inherit;min-height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);padding:10px 14px;width:100%}
+.field textarea{min-height:100px;resize:vertical}
+.ferr{color:var(--coral);font-weight:700;font-size:14px;min-height:20px;text-align:center}
+.fdone{background:var(--mint-soft);border-radius:16px;padding:16px;font-weight:700;text-align:center}
+.fine{font-size:14px;color:var(--muted);text-align:center}
+footer{border-top:1px solid var(--line);background:var(--card)}
+footer .in{padding-block:40px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px}
+footer nav a{text-decoration:none;font-weight:700;color:var(--muted);font-size:15px}
+footer .fine{max-width:40em;font-size:13px}
+@media (prefers-reduced-motion:reduce){.fl{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
+.wk{margin:0;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:transform .2s,box-shadow .2s}
+.wk:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(31,42,51,.08)}
+.wk img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-bottom:1px solid var(--line)}
+.wk .cap{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px}
+.wk h3{font-size:17px;font-weight:900;line-height:1.15}
+.wk p{font-size:14px;color:var(--muted);line-height:1.45}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--blush-soft);color:var(--coral);padding:3px 9px;border-radius:999px}
+@media (prefers-reduced-motion:reduce){.wk{transition:none}}
+
+/* distinct section colors */
+.card>.ct:only-child{flex:1;justify-content:center}
+main>section:nth-of-type(1){background:#FAF8F5}
+main>section:nth-of-type(2){background:#EEF6F3}
+main>section:nth-of-type(3){background:#FBF7EA}
+main>section:nth-of-type(4){background:#EFF2F8}
+main>section:nth-of-type(5){background:#F3F0F7}
+.band{border-top:1px solid rgba(31,42,51,.07)}
+
+/* distinctive header + footer */
+.appbar{background:#26324A;color:#F4EFE6;font-size:14px}
+.appbar .in{min-height:40px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding-block:6px;text-align:center}
+.appbar .live{background:#E9765F;color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.appbar .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff}
+.appbar a{color:#9ED3CF;font-weight:800;text-decoration:none}
+header{background:linear-gradient(90deg,#CFE7E3,#F3F0E2,#F6E5DE,#DCEBF2,#CFE7E3);background-size:400% 100%;animation:shift 24s ease-in-out infinite;border-bottom:1px solid rgba(31,42,51,.08)}
+body::before{background:#26324A}
+@keyframes shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.links a{color:#2F3B45}
+.links a:hover,.links a[aria-current]{background:rgba(255,255,255,.65);color:var(--ink)}
+footer{position:relative;overflow:hidden;background:#26324A;border-top:0;color:#F4EFE6}
+footer::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,#E9765F,#E7DCA2,#9ED3CF,#E9765F)}
+footer .in{position:relative;z-index:1;padding-block:48px 40px;gap:14px}
+footer .logo{color:#FFF9F2}
+footer .logo em{color:#F0A99C}
+footer .tagline{font-family:var(--display);font-style:italic;font-weight:700;font-size:18px;color:#E7DCA2}
+footer nav a{color:#C9D3E0}
+footer nav a:hover{color:#fff}
+footer .fine{color:#A9B4C4}
+footer .ffl{position:absolute;width:90px;opacity:.12;pointer-events:none}
+@media (prefers-reduced-motion:reduce){header{animation:none}}
+</style>
+</head>
+<body>
+<div class="appbar"><div class="in"><span class="live">Live now</span><span>The <strong>Built by Faith App</strong> is here: strength plans that grow with you.</span><a href="index.html#quiz">Find my program →</a></div></div>
+<header><div class="in nav"><a class="logo" href="index.html"><img src="img/logo-mr.png" alt="" width="38" height="24" style="width:auto;height:24px">Built by <em>Faith</em></a><nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="training.html">Training</a><a href="design.html" aria-current="page">Photo &amp; design</a><a href="about.html">About</a></nav><a class="btn btn-coral nav-cta" href="index.html#quiz">Find my program</a></div></header>
+<main><section class="hero"><span class="fl" style="left:6%;top:18%;width:46px;height:46px;animation-delay:0s"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><g fill="#F0A99C"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#F6F0D6"/><circle cx="50" cy="50" r="5" fill="#E7DCA2"/></svg></span><span class="fl" style="left:90%;top:14%;width:54px;height:54px;animation-delay:-1.2s"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><g fill="#9ED3CF"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#F6F0D6"/><circle cx="50" cy="50" r="5" fill="#E7DCA2"/></svg></span><span class="fl" style="left:12%;top:72%;width:28px;height:28px;animation-delay:-2.1s"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><g fill="#E7DCA2"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#F6F0D6"/><circle cx="50" cy="50" r="5" fill="#E7DCA2"/></svg></span><span class="fl" style="left:84%;top:70%;width:34px;height:34px;animation-delay:-0.6s"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><g fill="#F0A99C"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#F6F0D6"/><circle cx="50" cy="50" r="5" fill="#E7DCA2"/></svg></span><div class="in"><span class="eyebrow">Photography &amp; graphic design</span><h1>Look as strong as <em>you feel.</em></h1><p class="lead">Fitness and portrait photography, plus logos, brand identity and graphics for people and small businesses.</p><div class="actions"><a class="btn btn-coral" href="#book">Book a free creative call</a><a class="btn btn-line" href="#portfolio">See client work</a></div></div></section><section class="band" id="portfolio"><div class="in"><div class="head"><span class="head-ic"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="#C4553E" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="16" height="14" rx="2"/><path d="M3 14l4-4 4 4 3-3 5 5"/></svg></span><span class="eyebrow">Portfolio</span><h2>Client work</h2><p>Brand identity, campaigns, sports graphics and photography.</p></div><div class="cards c4 works"><a class="wk" href="project-dicks.html"><img src="img/dicks.jpg" alt="Dick's Sporting Goods project preview" loading="lazy"><div class="cap"><div class="tags"><span>Advertising</span><span>Social</span></div><h3>Dick's Sporting Goods</h3><p>Promotional campaign across print, social, email and web.</p></div></a><a class="wk" href="project-built-by-faith.html"><img src="img/bbf.jpg" alt="Built by Faith project preview" loading="lazy"><div class="cap"><div class="tags"><span>Branding</span><span>Print</span></div><h3>Built by Faith</h3><p>Full brand identity: logo, business cards, stationery and apparel.</p></div></a><a class="wk" href="project-game-day.html"><img src="img/gameday.jpg" alt="Game Day Campaign project preview" loading="lazy"><div class="cap"><div class="tags"><span>Sports</span><span>Social</span></div><h3>Game Day Campaign</h3><p>Game Day posters for the Phoenix Suns and Arizona Wildcats.</p></div></a><a class="wk" href="project-player.html"><img src="img/player.jpg" alt="Player Spotlight project preview" loading="lazy"><div class="cap"><div class="tags"><span>Sports graphic</span><span>Digital</span></div><h3>Player Spotlight</h3><p>Athlete spotlight graphics for Ohio State and GCU Track &amp; Field.</p></div></a><a class="wk" href="project-pizza.html"><img src="img/brickbasil.jpg" alt="Brick and Basil project preview" loading="lazy"><div class="cap"><div class="tags"><span>Branding</span><span>Identity</span></div><h3>Brick &amp; Basil</h3><p>Brand identity for an artisan pizza restaurant, logo to print.</p></div></a><a class="wk" href="project-photography.html"><img src="img/basketball.jpg" alt="Sports Photography project preview" loading="lazy"><div class="cap"><div class="tags"><span>Photography</span><span>Sports</span></div><h3>Sports Photography</h3><p>Fast action and race-day moments from the track and court.</p></div></a><a class="wk" href="project-photography.html"><img src="img/track.jpg" alt="Track and Field project preview" loading="lazy"><div class="cap"><div class="tags"><span>Photography</span><span>Track</span></div><h3>Track &amp; Field</h3><p>Speed, form and athleticism captured at the meet.</p></div></a><a class="wk" href="project-photography.html"><img src="img/portrait.jpg" alt="People and Portraits project preview" loading="lazy"><div class="cap"><div class="tags"><span>Photography</span><span>Portraits</span></div><h3>People &amp; Portraits</h3><p>Honest, warm portraits for athletes and anyone with a story.</p></div></a></div></div></section><section class="band alt" id="photo"><div class="in"><div class="head"><span class="head-ic"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="#7A6414" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 7.5h3.5L8 5h6l1.5 2.5H19v10H3z"/><circle cx="11" cy="12" r="3.2"/></svg></span><span class="eyebrow">Photography</span><h2>Photo sessions</h2><p>Every shoot starts with a free 15-minute creative call.</p></div><!-- NOTE: typical starting rates used as placeholders. Confirm with Maliyah before going live. --><div class="cards c4"><div class="card"><div class="ct t-butter"><h3>Mini session</h3><p>30 minutes</p></div><div class="cb"><div class="price">$95</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>10 edited photos</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>1 location</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Online gallery</span></li></ul><a class="btn btn-line btn-block" href="#book">Book mini</a></div></div><div class="card hl"><span class="badge">Popular</span><div class="ct t-blush"><h3>Full session</h3><p>1 hour</p></div><div class="cb"><div class="price">$175</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>25 edited photos</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>1 outfit change</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Online gallery</span></li></ul><a class="btn btn-line btn-block" href="#book">Book full</a></div></div><div class="card"><div class="ct t-mint"><h3>Fitness or brand</h3><p>90 minutes</p></div><div class="cb"><div class="price">$225</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>40 edited photos</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>2 locations</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Social-ready crops</span></li></ul><a class="btn btn-line btn-block" href="#book">Book shoot</a></div></div><div class="card"><div class="ct t-plain"><h3>Sports and events</h3><p>Games, meets, races</p></div><div class="cb"><div class="price">$75<small>/hr</small></div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Action coverage</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Edited gallery</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Team options</span></li></ul><a class="btn btn-line btn-block" href="#book">Get a quote</a></div></div></div></div></section><section class="band" id="design"><div class="in"><div class="head"><span class="head-ic"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="#C4553E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18l1-4 9-9 3 3-9 9z"/><path d="M12 7l3 3"/></svg></span><span class="eyebrow">Graphic design</span><h2>Design options</h2><p>Clean, faith-filled design for people, teams and small businesses.</p></div><div class="cards c3"><div class="card"><div class="ct t-blush"><h3>Flyer or event graphic</h3><p>1 design</p></div><div class="cb"><div class="price">$40</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Print and social sizes</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>2 revisions</span></li></ul><a class="btn btn-line btn-block" href="#book">Request this</a></div></div><div class="card"><div class="ct t-mint"><h3>Business cards</h3><p>Front and back</p></div><div class="cb"><div class="price">$60</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Print-ready files</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>2 revisions</span></li></ul><a class="btn btn-line btn-block" href="#book">Request this</a></div></div><div class="card"><div class="ct t-butter"><h3>Social graphics pack</h3><p>5 custom designs</p></div><div class="cb"><div class="price">$90</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Posts or stories</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Brand colors and fonts</span></li></ul><a class="btn btn-line btn-block" href="#book">Request this</a></div></div><div class="card"><div class="ct t-mint"><h3>Website or banner graphics</h3><p>Up to 5 designs</p></div><div class="cb"><div class="price">$120</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Headers and banners</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Web-ready sizes</span></li></ul><a class="btn btn-line btn-block" href="#book">Request this</a></div></div><div class="card"><div class="ct t-butter"><h3>Logo design</h3><p>2 concepts</p></div><div class="cb"><div class="price">$200</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>2 rounds of revisions</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>All file formats</span></li></ul><a class="btn btn-line btn-block" href="#book">Request this</a></div></div><div class="card"><div class="ct t-blush"><h3>Brand identity kit</h3><p>Full brand look</p></div><div class="cb"><div class="price">$450</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Logo, colors and fonts</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Mini style guide</span></li></ul><a class="btn btn-line btn-block" href="#book">Request this</a></div></div></div><p class="note">Bigger projects, team or season packages are quoted after your free call.</p></div></section><section class="band alt" id="book"><div class="in"><div class="head"><span class="head-ic"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="#2A7C74" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="4.5" width="15" height="14" rx="2"/><path d="M3.5 9h15M8 2.5v4M14 2.5v4"/></svg></span><span class="eyebrow">Free creative call</span><h2>Tell us what you're dreaming up.</h2><p>You'll hear back within 1 to 2 business days.</p></div><div class="form-card"><form id="f" name="creative-call" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" novalidate><input type="hidden" name="form-name" value="creative-call"><p hidden><label>Leave this empty: <input name="bot-field"></label></p><div class="fgrid">
+<div class="field"><label for="n">Name</label><input id="n" name="name" autocomplete="name"></div>
+<div class="field"><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email"></div>
+<div class="field"><label for="s">What do you need?</label><select id="s" name="service"><option>Photo session</option><option>Fitness or brand shoot</option><option>Sports or event coverage</option><option>Logo or brand identity</option><option>Social or print graphics</option><option>Not sure yet</option></select></div>
+<div class="field"><label for="w">Date or deadline (optional)</label><input id="w" name="deadline" placeholder="e.g. before March 15"></div>
+<div class="field full"><label for="m">Tell us about your project</label><textarea id="m" name="message"></textarea></div>
+<div class="full"><div class="ferr" id="err"></div><button class="btn btn-coral btn-block" type="submit">Request my free call</button></div>
+</div></form></div></div></section></main>
+<footer><span class="ffl" aria-hidden="true" style="left:-20px;top:30px"><svg viewBox="0 0 100 100" width="100%" height="100%"><g fill="#F0A99C"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#E7DCA2"/></svg></span><span class="ffl" aria-hidden="true" style="right:-16px;bottom:20px;width:120px"><svg viewBox="0 0 100 100" width="100%" height="100%"><g fill="#9ED3CF"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#E7DCA2"/></svg></span><div class="in"><a class="logo" href="index.html"><img src="img/logo-mr.png" alt="" width="38" height="24" style="width:auto;height:24px">Built by <em>Faith</em></a><p class="tagline">Built by faith. Designed to move you.</p><nav aria-label="Footer"><a href="index.html">Home</a><a href="index.html#quiz">Program quiz</a><a href="training.html">Training</a><a href="design.html">Photo &amp; design</a><a href="about.html">About &amp; contact</a></nav><p class="contact"><a href="mailto:builtbyfaith247@gmail.com">builtbyfaith247@gmail.com</a> · <a href="https://www.instagram.com/builtbyfaith4" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.behance.net/maliyahross" target="_blank" rel="noopener">Behance</a> · <a href="https://www.linkedin.com/in/maliyah-ross-400322330/" target="_blank" rel="noopener">LinkedIn</a></p><p class="fine">The app offers fitness guidance only, not medical advice. Talk to your doctor before starting a new program, especially if you take medication or are pregnant.</p></div></footer><script>
+(function(){
+  var f=document.getElementById('f'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    var n=document.getElementById('n').value.trim(),em=document.getElementById('e').value.trim(),er=document.getElementById('err');
+    if(!n){e.preventDefault();er.textContent="Add your name so we know who to contact.";return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){e.preventDefault();er.textContent="Enter an email like name@example.com.";return;}
+  });
+})();
+</script>
+</body>
+</html>
