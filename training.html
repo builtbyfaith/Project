@@ -1,323 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Built by Faith | Personal Training</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="One-on-one personal training with Maliyah in Phoenix. Book a free consultation.">
+<link rel="icon" href="img/logo-mr.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}footer .contact{font-size:14px;color:#C9D3E0}footer .contact a{color:#9ED3CF;text-decoration:none;font-weight:700}
+</style>
+<title>Train with Maliyah</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,800;0,9..144,900;1,9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap">
+<style>
+:root{color-scheme:light;
+  --bg:#FAF8F5;--alt:#FFFFFF;--card:#FFFFFF;--ink:#1F2A33;--muted:#5E676E;--line:#ECE3DA;
+  --coral:#C4553E;--coral-soft:#F7DDD6;--pink:#F0A99C;--mint:#9ED3CF;--mint-soft:#E3F2EF;--butter:#E7DCA2;--butter-soft:#F6F0D6;--blush-soft:#F4EFEA;--sage:#7FA77A;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;--body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+.in{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.02em;color:var(--ink)}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:999px;font:inherit;font-weight:800;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-line{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-block{width:100%}
+/* header */
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--card)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;min-height:62px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:900;font-size:19px;text-decoration:none}
+.logo em{font-style:italic;color:var(--coral)}
+.links{display:flex;gap:4px}
+.links a{text-decoration:none;font-weight:700;font-size:15px;padding:9px 14px;border-radius:999px;color:var(--muted)}
+.links a:hover,.links a[aria-current]{color:var(--ink);background:var(--bg)}
+.nav-cta{justify-self:end;min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:820px){.nav{grid-template-columns:1fr auto}.links{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--bg);text-align:center}
+.hero .in{position:relative;z-index:1;padding-block:44px 44px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.hero h1{font-size:clamp(32px,4.6vw,46px);line-height:1.08;font-weight:900;max-width:14em}
+.hero h1 em{font-style:italic;font-weight:700;color:var(--coral)}
+.hero .lead{font-size:16px;color:var(--muted);max-width:34em}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:44em}
+.chips span{font-size:14px;font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.verse{font-family:var(--display);font-style:italic;font-weight:700;color:var(--muted);font-size:14px}
+.fl{position:absolute;pointer-events:none;animation:bob 5s ease-in-out infinite;opacity:.55}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(14deg)}}
+/* bands */
+.band{border-top:1px solid var(--line);padding-block:48px}
+
+.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;max-width:34em;margin:0 auto 28px}
+.head-ic{width:44px;height:44px;border-radius:12px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;box-shadow:0 4px 14px rgba(31,42,51,.06)}
+.head h2{font-size:clamp(24px,3.2vw,30px);line-height:1.08;font-weight:900}
+.head p{color:var(--muted);font-size:15px}
+/* cards */
+.cards{display:grid;gap:16px}
+.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:980px){.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.c3{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+@media (max-width:540px){.c4{grid-template-columns:1fr;max-width:420px;margin-inline:auto}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;min-width:0;position:relative}
+.card.hl{border:2px solid var(--coral)}
+.badge{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--coral);color:#fff;padding:4px 10px;border-radius:999px}
+.ct{padding:18px 20px;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid var(--line)}
+.ct .ic{width:36px;height:36px;border-radius:12px;background:var(--card);display:grid;place-items:center;margin-bottom:4px}
+.ct h3{font-size:18px;font-weight:900;line-height:1.1}
+.ct p{color:var(--muted);font-size:14px;line-height:1.45}
+.t-blush{background:var(--blush-soft)}.t-mint{background:var(--mint-soft)}.t-butter{background:var(--butter-soft)}.t-plain{background:var(--bg)}
+.cb{padding:16px 20px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.price{font-family:var(--display);font-weight:900;font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+.price small{font-family:var(--body);font-size:15px;font-weight:700;color:var(--muted)}
+.price.free{color:var(--coral)}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.checks li{display:flex;gap:8px;font-size:14px}
+.checks svg{flex:0 0 18px;margin-top:4px;color:var(--sage)}
+.cb .btn{margin-top:auto}
+.note{text-align:center;color:var(--muted);font-size:15px;margin-top:24px}
+.step-n{width:34px;height:34px;border-radius:50%;background:var(--card);color:var(--coral);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:20px;margin-bottom:4px}
+/* forms */
+.form-card{max-width:600px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 20px 50px rgba(31,42,51,.06)}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fgrid .full{grid-column:1/-1}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:14px;font-weight:800}
+.field input,.field select,.field textarea{font:inherit;min-height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);padding:10px 14px;width:100%}
+.field textarea{min-height:100px;resize:vertical}
+.ferr{color:var(--coral);font-weight:700;font-size:14px;min-height:20px;text-align:center}
+.fdone{background:var(--mint-soft);border-radius:16px;padding:16px;font-weight:700;text-align:center}
+.fine{font-size:14px;color:var(--muted);text-align:center}
+footer{border-top:1px solid var(--line);background:var(--card)}
+footer .in{padding-block:40px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px}
+footer nav a{text-decoration:none;font-weight:700;color:var(--muted);font-size:15px}
+footer .fine{max-width:40em;font-size:13px}
+@media (prefers-reduced-motion:reduce){.fl{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
+
+/* distinct section colors */
+.card>.ct:only-child{flex:1;justify-content:center}
+main>section:nth-of-type(1){background:#FAF8F5}
+main>section:nth-of-type(2){background:#EEF6F3}
+main>section:nth-of-type(3){background:#FBF7EA}
+main>section:nth-of-type(4){background:#EFF2F8}
+main>section:nth-of-type(5){background:#F3F0F7}
+.band{border-top:1px solid rgba(31,42,51,.07)}
+
+/* distinctive header + footer */
+.appbar{background:#26324A;color:#F4EFE6;font-size:14px}
+.appbar .in{min-height:40px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding-block:6px;text-align:center}
+.appbar .live{background:#E9765F;color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.appbar .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff}
+.appbar a{color:#9ED3CF;font-weight:800;text-decoration:none}
+header{background:linear-gradient(90deg,#CFE7E3,#F3F0E2,#F6E5DE,#DCEBF2,#CFE7E3);background-size:400% 100%;animation:shift 24s ease-in-out infinite;border-bottom:1px solid rgba(31,42,51,.08)}
+body::before{background:#26324A}
+@keyframes shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.links a{color:#2F3B45}
+.links a:hover,.links a[aria-current]{background:rgba(255,255,255,.65);color:var(--ink)}
+footer{position:relative;overflow:hidden;background:#26324A;border-top:0;color:#F4EFE6}
+footer::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,#E9765F,#E7DCA2,#9ED3CF,#E9765F)}
+footer .in{position:relative;z-index:1;padding-block:48px 40px;gap:14px}
+footer .logo{color:#FFF9F2}
+footer .logo em{color:#F0A99C}
+footer .tagline{font-family:var(--display);font-style:italic;font-weight:700;font-size:18px;color:#E7DCA2}
+footer nav a{color:#C9D3E0}
+footer nav a:hover{color:#fff}
+footer .fine{color:#A9B4C4}
+footer .ffl{position:absolute;width:90px;opacity:.12;pointer-events:none}
+@media (prefers-reduced-motion:reduce){header{animation:none}}
+</style>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="header-edge-flowers" style="position:absolute;left:0;top:0;bottom:0;width:200px;display:flex;align-items:center;gap:6px;padding-left:0;pointer-events:none;z-index:1;overflow:hidden;">
-    <svg style="width:62px;height:62px;opacity:.34;flex-shrink:0;margin-left:-18px;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/></g></svg>
-    <svg style="width:42px;height:42px;opacity:.30;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#e8b8be"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/></g></svg>
-  </div>
-  <div class="header-edge-flowers" style="position:absolute;right:0;top:0;bottom:0;width:180px;display:flex;align-items:center;justify-content:flex-end;gap:6px;padding-right:12px;pointer-events:none;z-index:1;overflow:hidden;">
-    <svg style="width:40px;height:40px;opacity:.3;flex-shrink:0;" viewBox="0 0 100 100"><g fill="#d6b73f"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#67b8b1"/></g></svg>
-    <svg style="width:60px;height:60px;opacity:.32;flex-shrink:0;margin-right:-16px;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/></g></svg>
-  </div>
-  <div class="container nav-wrap">
-    <div class="logo-slot"><img height="200" width="200" src="Logosvari-03.png" /></div>
-    <nav><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="training.html">Training</a></li>
-      <li><a href="work.html">Design &amp; Photos</a></li>
-      <li><a href="about.html">About &amp; Contact</a></li>
-    </ul></nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<main>
-
-<!-- PAGE HERO -->
-<section class="page-hero" style="overflow:hidden;">
-  <div class="blob" style="width:400px;height:400px;background:rgba(255,111,97,.1);top:-100px;right:-80px;"></div>
-  <div class="blob" style="width:250px;height:230px;background:rgba(103,184,177,.08);bottom:-60px;left:-60px;"></div>
-  <svg class="hib" style="top:5px;right:5%;width:110px;opacity:.18;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/></g></svg>
-  <svg class="hib hib-3" style="bottom:10px;left:3%;width:80px;opacity:.13;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#e8b8be"/></g></svg>
-  <div class="container">
-    <div class="page-hero-inner">
-      <span class="eyebrow" style="background:rgba(255,111,97,.12);color:var(--coral);">Personal Training</span>
-      <h1 class="serif">Your body is capable of <span class="accent">more</span> than you know.</h1>
-      <p>Customized programs, real accountability, and a trainer who believes in you as much as you do. Let's build strength, confidence, and consistency — together.</p>
-      <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem;">
-        <a class="btn btn-primary" href="https://app.built-by-faith.com/" target="_blank">Open the App ✦</a>
-        <a class="btn btn-secondary" href="contact.html">Work with Me</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- VIDEO LIBRARY -->
-<section class="section" style="background:white;overflow:hidden;">
-  <svg class="hib hib-4" style="top:-20px;right:0%;width:100px;opacity:.07;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/></g></svg>
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Training Videos</span>
-      <h2 class="serif">Watch. <span style="color:var(--coral);font-style:italic;">Learn. Move.</span></h2>
-      <p>Tutorial videos and workout walkthroughs — your visual guide to getting it done right.</p>
-    </div>
-
-    <!-- TABS -->
-    <div class="tab-bar">
-      <button class="tab-btn active" onclick="switchTab(this,'tab-all')">All Videos</button>
-      <button class="tab-btn" onclick="switchTab(this,'tab-strength')">Strength</button>
-      <button class="tab-btn" onclick="switchTab(this,'tab-cardio')">Cardio & HIIT</button>
-      <button class="tab-btn" onclick="switchTab(this,'tab-tips')">Form & Tips</button>
-    </div>
-
-    <!-- ALL VIDEOS -->
-    <div class="tab-panel active" id="tab-all">
-      <div class="video-grid">
-        <!-- placeholder 1 -->
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <span class="video-thumb-label">Strength</span>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-badge badge-coral">Strength</span>
-            <h4>Full Body Dumbbell Circuit</h4>
-            <p>45-min · Beginner-friendly</p>
-          </div>
-        </div>
-        <!-- placeholder 2 -->
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <span class="video-thumb-label">HIIT</span>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-badge badge-teal">Cardio</span>
-            <h4>20-Minute HIIT Blast</h4>
-            <p>20-min · All levels</p>
-          </div>
-        </div>
-        <!-- placeholder 3 -->
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <span class="video-thumb-label">Form Tips</span>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-badge badge-gold">Form & Tips</span>
-            <h4>Squat Form Masterclass</h4>
-            <p>12-min · Tutorial</p>
-          </div>
-        </div>
-        <!-- placeholder 4 -->
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <span class="video-thumb-label">Strength</span>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-badge badge-coral">Strength</span>
-            <h4>Upper Body Pull Day</h4>
-            <p>50-min · Intermediate</p>
-          </div>
-        </div>
-        <!-- placeholder 5 -->
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <span class="video-thumb-label">Cardio</span>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-badge badge-teal">Cardio</span>
-            <h4>Low Impact Cardio Walk</h4>
-            <p>30-min · Beginner</p>
-          </div>
-        </div>
-        <!-- placeholder 6 -->
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <span class="video-thumb-label">Core</span>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info">
-            <span class="video-badge badge-gold">Core</span>
-            <h4>10-Minute Core Crusher</h4>
-            <p>10-min · All levels</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STRENGTH TAB -->
-    <div class="tab-panel" id="tab-strength">
-      <div class="video-grid">
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info"><span class="video-badge badge-coral">Strength</span><h4>Full Body Dumbbell Circuit</h4><p>45-min · Beginner-friendly</p></div>
-        </div>
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info"><span class="video-badge badge-coral">Strength</span><h4>Upper Body Pull Day</h4><p>50-min · Intermediate</p></div>
-        </div>
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info"><span class="video-badge badge-coral">Strength</span><h4>Leg Day Fundamentals</h4><p>55-min · All levels</p></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CARDIO TAB -->
-    <div class="tab-panel" id="tab-cardio">
-      <div class="video-grid">
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info"><span class="video-badge badge-teal">Cardio</span><h4>20-Minute HIIT Blast</h4><p>20-min · All levels</p></div>
-        </div>
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info"><span class="video-badge badge-teal">Cardio</span><h4>Low Impact Cardio Walk</h4><p>30-min · Beginner</p></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TIPS TAB -->
-    <div class="tab-panel" id="tab-tips">
-      <div class="video-grid">
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info"><span class="video-badge badge-gold">Form & Tips</span><h4>Squat Form Masterclass</h4><p>12-min · Tutorial</p></div>
-        </div>
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info"><span class="video-badge badge-gold">Form & Tips</span><h4>Hip Hinge Breakdown</h4><p>8-min · Tutorial</p></div>
-        </div>
-        <div class="video-card">
-          <div class="video-thumb">
-            <div class="video-play-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
-            <div class="coming-soon-overlay"><span>🎬</span><span>Coming Soon</span></div>
-          </div>
-          <div class="video-info"><span class="video-badge badge-gold">Form & Tips</span><h4>Push-Up Progressions</h4><p>10-min · All levels</p></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- SERVICES OVERVIEW -->
-<section class="section" style="padding:2rem 0;overflow:hidden;">
-
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">What's Included</span>
-      <h2 class="serif">Training built for <span style="color:var(--coral);font-style:italic;">real results</span></h2>
-    </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="svc-icon svc-icon-coral">💪</div>
-        <h3 class="serif">Custom Workout Plans</h3>
-        <p>Programs tailored to your fitness level, goals, and schedule. No cookie-cutter routines — every plan is built specifically for you.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon svc-icon-teal">🎯</div>
-        <h3 class="serif">Goal-Based Coaching</h3>
-        <p>Whether you want to lose weight, build muscle, improve athletic performance, or just feel better — we start with your why.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon svc-icon-gold">📱</div>
-        <h3 class="serif">App Access</h3>
-        <p>Track your workouts, progress, and stay connected through the Built by Faith app. Everything you need, right in your pocket.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon svc-icon-coral">🏃‍♀️</div>
-        <h3 class="serif">Cardio & HIIT</h3>
-        <p>High-energy interval training and endurance programs designed to burn fat, build stamina, and keep your metabolism fired up.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon svc-icon-teal">🏋️‍♀️</div>
-        <h3 class="serif">Strength Training</h3>
-        <p>Structured lifting programs focusing on form, progressive overload, and building the strong foundation your body deserves.</p>
-      </div>
-      <div class="service-card">
-        <div class="svc-icon svc-icon-gold">🌺</div>
-        <h3 class="serif">Accountability & Support</h3>
-        <p>Consistent check-ins, motivation, and a trainer who celebrates every win with you. You won't be doing this alone.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-</main>
-
-<footer class="footer" style="position:relative;overflow:hidden;">
-  <div class="container footer-grid">
-
-    <span class="footer-brand">Built by Faith ✿</span>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/builtbyfaith4" target="_blank">Instagram</a>
-      <a href="https://www.behance.net/maliyahross" target="_blank">Behance</a>
-      <a href="https://www.linkedin.com/in/maliyah-ross-400322330/" target="_blank">LinkedIn</a>
-      <a href="https://app.built-by-faith.com/" target="_blank">App</a>
-      <a href="mailto:builtbyfaith247@gmail.com">Email</a>
-    </div>
-    <span class="footer-copy">© 2026 Maliyah Ross</span>
-  </div>
-</footer>
-
-<div class="mobile-nav-overlay" id="mobileNav">
-  <svg class="mob-hib" style="top:-20px;left:-20px;width:140px;opacity:.18;" viewBox="0 0 100 100"><g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#d6b73f"/></g></svg>
-  <svg class="mob-hib" style="bottom:-20px;right:-20px;width:140px;opacity:.17;" viewBox="0 0 100 100"><g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="11" fill="#ff6f61"/></g></svg>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="training.html">Training</a></li>
-    <li><a href="work.html">Design & Photos</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</div>
-<script>
-function switchTab(btn, tabId) {
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById(tabId).classList.add('active');
-}
-(function(){var btn=document.getElementById('navToggle');var overlay=document.getElementById('mobileNav');if(!btn||!overlay)return;btn.addEventListener('click',function(){var open=overlay.classList.toggle('nav-open');btn.classList.toggle('open',open);document.body.style.overflow=open?'hidden':'';});overlay.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){overlay.classList.remove('nav-open');btn.classList.remove('open');document.body.style.overflow='';});});})();
-(function(){var hdr=document.querySelector('.site-header');if(!hdr)return;function update(){var pct=Math.min((window.scrollY||window.pageYOffset)/600,1)*100;hdr.style.backgroundPosition=pct+'% '+(40+pct*.2)+'%';}window.addEventListener('scroll',update,{passive:true});update();})();
+<div class="appbar"><div class="in"><span class="live">Live now</span><span>The <strong>Built by Faith App</strong> is here: strength plans that grow with you.</span><a href="index.html#quiz">Find my program →</a></div></div>
+<header><div class="in nav"><a class="logo" href="index.html"><img src="img/logo-mr.png" alt="" width="38" height="24" style="width:auto;height:24px">Built by <em>Faith</em></a><nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="training.html" aria-current="page">Training</a><a href="design.html">Photo &amp; design</a><a href="about.html">About</a></nav><a class="btn btn-coral nav-cta" href="index.html#quiz">Find my program</a></div></header>
+<main><section class="hero"><span class="fl" style="left:6%;top:18%;width:46px;height:46px;animation-delay:0s"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><g fill="#F0A99C"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#F6F0D6"/><circle cx="50" cy="50" r="5" fill="#E7DCA2"/></svg></span><span class="fl" style="left:90%;top:14%;width:54px;height:54px;animation-delay:-1.2s"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><g fill="#9ED3CF"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#F6F0D6"/><circle cx="50" cy="50" r="5" fill="#E7DCA2"/></svg></span><span class="fl" style="left:12%;top:72%;width:28px;height:28px;animation-delay:-2.1s"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><g fill="#E7DCA2"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#F6F0D6"/><circle cx="50" cy="50" r="5" fill="#E7DCA2"/></svg></span><span class="fl" style="left:84%;top:70%;width:34px;height:34px;animation-delay:-0.6s"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><g fill="#F0A99C"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#F6F0D6"/><circle cx="50" cy="50" r="5" fill="#E7DCA2"/></svg></span><div class="in"><span class="eyebrow">1:1 personal training</span><h1>Train one-on-one with <em>Maliyah.</em></h1><p class="lead">Custom strength and conditioning with real accountability. Open to every age and every level.</p><div class="actions"><a class="btn btn-coral" href="#book">Book a free consultation</a><a class="btn btn-line" href="#pricing">See pricing</a></div></div></section><!-- OPTIONAL: add a photo of Maliyah coaching a client here --><section class="band alt" id="pricing"><div class="in"><div class="head"><span class="head-ic"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="#C4553E" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 9v4M6 7v8M16 7v8M19 9v4M6 11h10"/></svg></span><span class="eyebrow">Pricing</span><h2>Sessions and packs</h2><p>Start with a free consultation. The app is a separate membership.</p></div><!-- NOTE: typical starting rates used as placeholders. Confirm with Maliyah before going live. --><div class="cards c3"><div class="card"><div class="ct t-blush"><h3>Consultation</h3><p>20 minutes</p></div><div class="cb"><div class="price free">Free</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Goals and history</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Injury check</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Starting plan</span></li></ul><a class="btn btn-coral btn-block" href="#book">Book free</a></div></div><div class="card"><div class="ct t-plain"><h3>Single session</h3><p>60 minutes</p></div><div class="cb"><div class="price">$45</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Full coached workout</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Form and technique</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Plan for the week</span></li></ul><a class="btn btn-line btn-block" href="#book">Book a session</a></div></div><div class="card hl"><span class="badge">Best value</span><div class="ct t-mint"><h3>4-session pack</h3><p>$40 per session</p></div><div class="cb"><div class="price">$160</div><ul class="checks"><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Four coached sessions</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Workout plan between sessions</span></li><li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Weekly check-ins</span></li></ul><a class="btn btn-line btn-block" href="#book">Choose 4 sessions</a></div></div></div><!-- PLACEHOLDER: session location(s) and cancellation policy --></div></section><section class="band" id="how"><div class="in"><div class="head"><span class="head-ic"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="#2A7C74" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="4.5" width="15" height="14" rx="2"/><path d="M3.5 9h15M8 2.5v4M14 2.5v4"/></svg></span><span class="eyebrow">How it works</span><h2>Three simple steps</h2></div><div class="cards c3"><div class="card"><div class="ct t-blush" style="border-bottom:0;align-items:center;text-align:center"><span class="step-n">1</span><h3>Free consultation</h3><p>We talk goals, history, injuries and schedule.</p></div></div><div class="card"><div class="ct t-mint" style="border-bottom:0;align-items:center;text-align:center"><span class="step-n">2</span><h3>Your plan</h3><p>A custom program built around your goals and schedule.</p></div></div><div class="card"><div class="ct t-butter" style="border-bottom:0;align-items:center;text-align:center"><span class="step-n">3</span><h3>Train together</h3><p>Coached one-on-one sessions, plus simple homework in between.</p></div></div></div></div></section><section class="band alt" id="book"><div class="in"><div class="head"><span class="head-ic"><svg width="24" height="24" viewBox="0 0 22 22" fill="none" stroke="#2A7C74" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="4.5" width="15" height="14" rx="2"/><path d="M3.5 9h15M8 2.5v4M14 2.5v4"/></svg></span><span class="eyebrow">Free consultation</span><h2>Let's talk about your goals.</h2><p>You'll hear back within 1 to 2 business days to schedule.</p></div><div class="form-card"><form id="f" name="training-consultation" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" novalidate><input type="hidden" name="form-name" value="training-consultation"><p hidden><label>Leave this empty: <input name="bot-field"></label></p><div class="fgrid">
+<div class="field"><label for="n">Name</label><input id="n" name="name" autocomplete="name"></div>
+<div class="field"><label for="e">Email</label><input id="e" name="email" type="email" autocomplete="email"></div>
+<div class="field"><label for="ph">Phone (optional)</label><input id="ph" name="phone" type="tel" autocomplete="tel"></div>
+<div class="field"><label for="g">Main goal</label><select id="g" name="goal"><option>Get stronger</option><option>Lose weight and keep muscle</option><option>Menopause or hormone support</option><option>Senior strength and balance</option><option>Marathon, race or track</option><option>Sports performance</option><option>Something else</option></select></div>
+<div class="field full"><label for="t">Best times to reach you</label><input id="t" name="best-times" placeholder="e.g. weekday mornings"></div>
+<div class="field full"><label for="m">Anything we should know?</label><textarea id="m" name="message"></textarea></div>
+<div class="full"><div class="ferr" id="err"></div><button class="btn btn-coral btn-block" type="submit">Request my free consultation</button></div>
+</div></form></div></div></section></main>
+<footer><span class="ffl" aria-hidden="true" style="left:-20px;top:30px"><svg viewBox="0 0 100 100" width="100%" height="100%"><g fill="#F0A99C"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#E7DCA2"/></svg></span><span class="ffl" aria-hidden="true" style="right:-16px;bottom:20px;width:120px"><svg viewBox="0 0 100 100" width="100%" height="100%"><g fill="#9ED3CF"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#E7DCA2"/></svg></span><div class="in"><a class="logo" href="index.html"><img src="img/logo-mr.png" alt="" width="38" height="24" style="width:auto;height:24px">Built by <em>Faith</em></a><p class="tagline">Built by faith. Designed to move you.</p><nav aria-label="Footer"><a href="index.html">Home</a><a href="index.html#quiz">Program quiz</a><a href="training.html">Training</a><a href="design.html">Photo &amp; design</a><a href="about.html">About &amp; contact</a></nav><p class="contact"><a href="mailto:builtbyfaith247@gmail.com">builtbyfaith247@gmail.com</a> · <a href="https://www.instagram.com/builtbyfaith4" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.behance.net/maliyahross" target="_blank" rel="noopener">Behance</a> · <a href="https://www.linkedin.com/in/maliyah-ross-400322330/" target="_blank" rel="noopener">LinkedIn</a></p><p class="fine">The app offers fitness guidance only, not medical advice. Talk to your doctor before starting a new program, especially if you take medication or are pregnant.</p></div></footer><script>
+(function(){
+  var f=document.getElementById('f'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    var n=document.getElementById('n').value.trim(),em=document.getElementById('e').value.trim(),er=document.getElementById('err');
+    if(!n){e.preventDefault();er.textContent="Add your name so we know who to contact.";return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){e.preventDefault();er.textContent="Enter an email like name@example.com.";return;}
+  });
+})();
 </script>
 </body>
 </html>

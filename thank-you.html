@@ -1,66 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Built by Faith | Message Sent!</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Thanks for reaching out to Built by Faith.">
+<link rel="icon" href="img/logo-mr.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}footer .contact{font-size:14px;color:#C9D3E0}footer .contact a{color:#9ED3CF;text-decoration:none;font-weight:700}
+</style>
+<style>
+.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px;align-items:center;max-width:920px;margin:0 auto}
+@media (max-width:760px){.about{grid-template-columns:1fr;text-align:center}}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;border:1px solid var(--line)}
+.about .txt{display:flex;flex-direction:column;gap:12px}
+.about h1{font-size:clamp(30px,4vw,42px);font-weight:900;line-height:1.08}
+.about p{color:var(--muted)}
+.ct-grid .card .ct{align-items:center;text-align:center}
+.ct-grid a{word-break:break-word}
+</style>
+<title>Message Sent</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,800;0,9..144,900;1,9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap">
+<style>
+:root{color-scheme:light;
+  --bg:#FAF8F5;--alt:#FFFFFF;--card:#FFFFFF;--ink:#1F2A33;--muted:#5E676E;--line:#ECE3DA;
+  --coral:#C4553E;--coral-soft:#F7DDD6;--pink:#F0A99C;--mint:#9ED3CF;--mint-soft:#E3F2EF;--butter:#E7DCA2;--butter-soft:#F6F0D6;--blush-soft:#F4EFEA;--sage:#7FA77A;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;--body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+.in{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.02em;color:var(--ink)}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:999px;font:inherit;font-weight:800;font-size:15px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-line{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-block{width:100%}
+/* header */
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:var(--card)}
+.nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;min-height:62px}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:900;font-size:19px;text-decoration:none}
+.logo em{font-style:italic;color:var(--coral)}
+.links{display:flex;gap:4px}
+.links a{text-decoration:none;font-weight:700;font-size:15px;padding:9px 14px;border-radius:999px;color:var(--muted)}
+.links a:hover,.links a[aria-current]{color:var(--ink);background:var(--bg)}
+.nav-cta{justify-self:end;min-height:44px;padding:0 18px;font-size:15px}
+@media (max-width:820px){.nav{grid-template-columns:1fr auto}.links{display:none}}
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--bg);text-align:center}
+.hero .in{position:relative;z-index:1;padding-block:44px 44px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.hero h1{font-size:clamp(32px,4.6vw,46px);line-height:1.08;font-weight:900;max-width:14em}
+.hero h1 em{font-style:italic;font-weight:700;color:var(--coral)}
+.hero .lead{font-size:16px;color:var(--muted);max-width:34em}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:44em}
+.chips span{font-size:14px;font-weight:700;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.verse{font-family:var(--display);font-style:italic;font-weight:700;color:var(--muted);font-size:14px}
+.fl{position:absolute;pointer-events:none;animation:bob 5s ease-in-out infinite;opacity:.55}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(14deg)}}
+/* bands */
+.band{border-top:1px solid var(--line);padding-block:48px}
+
+.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;max-width:34em;margin:0 auto 28px}
+.head-ic{width:44px;height:44px;border-radius:12px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;box-shadow:0 4px 14px rgba(31,42,51,.06)}
+.head h2{font-size:clamp(24px,3.2vw,30px);line-height:1.08;font-weight:900}
+.head p{color:var(--muted);font-size:15px}
+/* cards */
+.cards{display:grid;gap:16px}
+.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:980px){.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.c3{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
+@media (max-width:540px){.c4{grid-template-columns:1fr;max-width:420px;margin-inline:auto}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;min-width:0;position:relative}
+.card.hl{border:2px solid var(--coral)}
+.badge{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:var(--coral);color:#fff;padding:4px 10px;border-radius:999px}
+.ct{padding:18px 20px;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid var(--line)}
+.ct .ic{width:36px;height:36px;border-radius:12px;background:var(--card);display:grid;place-items:center;margin-bottom:4px}
+.ct h3{font-size:18px;font-weight:900;line-height:1.1}
+.ct p{color:var(--muted);font-size:14px;line-height:1.45}
+.t-blush{background:var(--blush-soft)}.t-mint{background:var(--mint-soft)}.t-butter{background:var(--butter-soft)}.t-plain{background:var(--bg)}
+.cb{padding:16px 20px 20px;display:flex;flex-direction:column;gap:12px;flex:1}
+.price{font-family:var(--display);font-weight:900;font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+.price small{font-family:var(--body);font-size:15px;font-weight:700;color:var(--muted)}
+.price.free{color:var(--coral)}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.checks li{display:flex;gap:8px;font-size:14px}
+.checks svg{flex:0 0 18px;margin-top:4px;color:var(--sage)}
+.cb .btn{margin-top:auto}
+.note{text-align:center;color:var(--muted);font-size:15px;margin-top:24px}
+.step-n{width:34px;height:34px;border-radius:50%;background:var(--card);color:var(--coral);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:20px;margin-bottom:4px}
+/* forms */
+.form-card{max-width:600px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 20px 50px rgba(31,42,51,.06)}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fgrid .full{grid-column:1/-1}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:14px;font-weight:800}
+.field input,.field select,.field textarea{font:inherit;min-height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);padding:10px 14px;width:100%}
+.field textarea{min-height:100px;resize:vertical}
+.ferr{color:var(--coral);font-weight:700;font-size:14px;min-height:20px;text-align:center}
+.fdone{background:var(--mint-soft);border-radius:16px;padding:16px;font-weight:700;text-align:center}
+.fine{font-size:14px;color:var(--muted);text-align:center}
+footer{border-top:1px solid var(--line);background:var(--card)}
+footer .in{padding-block:40px;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px}
+footer nav a{text-decoration:none;font-weight:700;color:var(--muted);font-size:15px}
+footer .fine{max-width:40em;font-size:13px}
+@media (prefers-reduced-motion:reduce){.fl{animation:none}.btn{transition:none}html{scroll-behavior:auto}}
+
+/* distinct section colors */
+.card>.ct:only-child{flex:1;justify-content:center}
+main>section:nth-of-type(1){background:#FAF8F5}
+main>section:nth-of-type(2){background:#EEF6F3}
+main>section:nth-of-type(3){background:#FBF7EA}
+main>section:nth-of-type(4){background:#EFF2F8}
+main>section:nth-of-type(5){background:#F3F0F7}
+.band{border-top:1px solid rgba(31,42,51,.07)}
+
+/* distinctive header + footer */
+.appbar{background:#26324A;color:#F4EFE6;font-size:14px}
+.appbar .in{min-height:40px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding-block:6px;text-align:center}
+.appbar .live{background:#E9765F;color:#fff;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.appbar .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff}
+.appbar a{color:#9ED3CF;font-weight:800;text-decoration:none}
+header{background:linear-gradient(90deg,#CFE7E3,#F3F0E2,#F6E5DE,#DCEBF2,#CFE7E3);background-size:400% 100%;animation:shift 24s ease-in-out infinite;border-bottom:1px solid rgba(31,42,51,.08)}
+body::before{background:#26324A}
+@keyframes shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.links a{color:#2F3B45}
+.links a:hover,.links a[aria-current]{background:rgba(255,255,255,.65);color:var(--ink)}
+footer{position:relative;overflow:hidden;background:#26324A;border-top:0;color:#F4EFE6}
+footer::before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,#E9765F,#E7DCA2,#9ED3CF,#E9765F)}
+footer .in{position:relative;z-index:1;padding-block:48px 40px;gap:14px}
+footer .logo{color:#FFF9F2}
+footer .logo em{color:#F0A99C}
+footer .tagline{font-family:var(--display);font-style:italic;font-weight:700;font-size:18px;color:#E7DCA2}
+footer nav a{color:#C9D3E0}
+footer nav a:hover{color:#fff}
+footer .fine{color:#A9B4C4}
+footer .ffl{position:absolute;width:90px;opacity:.12;pointer-events:none}
+@media (prefers-reduced-motion:reduce){header{animation:none}}
+</style>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container nav-wrap">
-    <div class="logo-slot"><img height="200" width="200" src="Logosvari-03.png" /></div>
-    <nav><ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="training.html">Training</a></li>
-      <li><a href="work.html">Design &amp; Photos</a></li>
-      <li><a href="about.html">About &amp; Contact</a></li>
-    </ul></nav>
-  </div>
-</header>
-
-<main>
-  <section style="min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 1.5rem;position:relative;overflow:hidden;">
-
-    <!-- hibiscus decorations -->
-    <svg class="hib" style="top:10%;right:5%;width:110px;opacity:.14;" viewBox="0 0 100 100">
-      <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-    <svg class="hib hib-3" style="bottom:10%;left:4%;width:90px;opacity:.13;" viewBox="0 0 100 100">
-      <g fill="#67b8b1"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#ff6f61"/><circle cx="50" cy="50" r="5" fill="#67b8b1" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-    </svg>
-
-    <div style="max-width:520px;">
-      <!-- big hibiscus icon -->
-      <svg style="width:80px;height:80px;margin:0 auto 1.5rem;display:block;" viewBox="0 0 100 100">
-        <g fill="#ff6f61"><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(0 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(72 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(144 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(216 50 50)"/><ellipse cx="50" cy="20" rx="12" ry="24" transform="rotate(288 50 50)"/><circle cx="50" cy="50" r="10" fill="#d6b73f"/><circle cx="50" cy="50" r="5" fill="#ff6f61" opacity=".6"/><line x1="50" y1="50" x2="50" y2="32" stroke="#d6b73f" stroke-width="2" stroke-linecap="round" opacity=".8"/><circle cx="50" cy="30" r="2.5" fill="#d6b73f" opacity=".85"/></g>
-      </svg>
-      <h1 class="serif" style="font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:1rem;">Message sent! <span style="color:var(--coral);font-style:italic;">Thank you.</span></h1>
-      <p style="font-size:1rem;color:rgba(37,50,74,.65);margin-bottom:2rem;">I'll get back to you as soon as possible. In the meantime, feel free to browse my work.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a class="btn btn-primary" href="work.html">View My Work</a>
-        <a class="btn btn-secondary" href="index.html">Back to Home</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container footer-grid">
-    <span class="footer-brand">Maliyah Ross</span>
-    <div class="footer-links">
-      <a href="https://www.instagram.com/builtbyfaith4" target="_blank">Instagram</a>
-      <a href="https://www.behance.net/maliyahross" target="_blank">Behance</a>
-      <a href="https://www.linkedin.com/in/maliyah-ross-400322330/" target="_blank">LinkedIn</a>
-      <a href="mailto:builtbyfaith247@gmail.com">Email</a>
-    </div>
-    <span class="footer-copy">© 2026 Maliyah Ross</span>
-  </div>
-</footer>
-
+<div class="appbar"><div class="in"><span class="live">Live now</span><span>The <strong>Built by Faith App</strong> is here: strength plans that grow with you.</span><a href="index.html#quiz">Find my program →</a></div></div>
+<header><div class="in nav"><a class="logo" href="index.html"><img src="img/logo-mr.png" alt="" width="38" height="24" style="width:auto;height:24px">Built by <em>Faith</em></a><nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="training.html">Training</a><a href="design.html">Photo &amp; design</a><a href="about.html">About</a></nav><a class="btn btn-coral nav-cta" href="index.html#quiz">Find my program</a></div></header>
+<main><section class="hero"><div class="in" style="padding-block:80px">
+<span class="eyebrow">Thank you</span><h1>Message sent!</h1>
+<p class="lead">You'll hear back within 1 to 2 business days. In the meantime, take a look around.</p>
+<div class="actions"><a class="btn btn-coral" href="index.html#quiz">Find my program</a><a class="btn btn-line" href="design.html#portfolio">See client work</a></div>
+<p class="verse">"I can do all things through Christ who strengthens me." Philippians 4:13</p>
+</div></section></main>
+<footer><span class="ffl" aria-hidden="true" style="left:-20px;top:30px"><svg viewBox="0 0 100 100" width="100%" height="100%"><g fill="#F0A99C"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#E7DCA2"/></svg></span><span class="ffl" aria-hidden="true" style="right:-16px;bottom:20px;width:120px"><svg viewBox="0 0 100 100" width="100%" height="100%"><g fill="#9ED3CF"><ellipse cx="50" cy="24" rx="14" ry="22"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(72 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(144 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(216 50 50)"/><ellipse cx="50" cy="24" rx="14" ry="22" transform="rotate(288 50 50)"/></g><circle cx="50" cy="50" r="11" fill="#E7DCA2"/></svg></span><div class="in"><a class="logo" href="index.html"><img src="img/logo-mr.png" alt="" width="38" height="24" style="width:auto;height:24px">Built by <em>Faith</em></a><p class="tagline">Built by faith. Designed to move you.</p><nav aria-label="Footer"><a href="index.html">Home</a><a href="index.html#quiz">Program quiz</a><a href="training.html">Training</a><a href="design.html">Photo &amp; design</a><a href="about.html">About &amp; contact</a></nav><p class="contact"><a href="mailto:builtbyfaith247@gmail.com">builtbyfaith247@gmail.com</a> · <a href="https://www.instagram.com/builtbyfaith4" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.behance.net/maliyahross" target="_blank" rel="noopener">Behance</a> · <a href="https://www.linkedin.com/in/maliyah-ross-400322330/" target="_blank" rel="noopener">LinkedIn</a></p><p class="fine">The app offers fitness guidance only, not medical advice. Talk to your doctor before starting a new program, especially if you take medication or are pregnant.</p></div></footer>
 </body>
 </html>
